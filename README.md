@@ -16,5 +16,4 @@ Een app die op basis van de producten die jij nog hebt op zoek gaat naar recepte
 * Binnen de app de bereidingswijze tonen op de website/blog waar het recept vandaan komt.
 * Recepten in favorieten opslaan.
 
-
 ## Prerequisites 
