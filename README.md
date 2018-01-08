@@ -15,6 +15,7 @@ Een app die op basis van de producten die jij nog hebt op zoek gaat naar recepte
 * Beperken tot een bepaald soort recepten.
 * Sorteren op beoordeling of populairiteit.
 * Binnen de app de bereidingswijze tonen op de website/blog waar het recept vandaan komt.
+* Account maken/inloggen
 * Recepten in favorieten opslaan.
 
 ### MVP/optional
@@ -23,3 +24,7 @@ Een gebruiker zal op zijn minst in staat moeten zijn om op basis van ingrediënt
 Een functie voor die app die optioneel is, is de mogelijkheid om een boodschappenlijstje te maken voor de producten die je nog wel moet halen voor het maken van een bepaald recept. 
 
 ## Prerequisites 
+* Food2Fork Recipe API (http://food2fork.com/about/api)
+* Firebase Database
+
+
