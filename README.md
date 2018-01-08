@@ -26,7 +26,11 @@ Een gebruiker zal op zijn minst in staat moeten zijn om op basis van ingrediënt
 Een functie voor die app die optioneel is, is de mogelijkheid om een boodschappenlijstje te maken voor de producten die je nog wel moet halen voor het maken van een bepaald recept. 
 
 ## Prerequisites 
+Ik verwacht dat het moeilijkste onderdeel van de app wordt om ervoor te zorgen dat de webpagina's van de websites/blogs waar de recepten staan in de app getoond worden, in plaats van dat de browser apart wordt opgestart. 
+
+### Data source
 * Food2Fork Recipe API (http://food2fork.com/about/api)
+
+### External components
 * Firebase Database
-
-
+* Firebase Auth
