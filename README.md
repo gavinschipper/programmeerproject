@@ -8,7 +8,7 @@ Wanneer je kookt, gebruik je niet altijd alle producten (helemaal) die je in hui
 Een app die op basis van de producten die jij nog hebt op zoek gaat naar recepten waar je de producten voor kan gebruiken. 
 
 ### Visual sketch
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Start%20screen.png width="200"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Results.png width="200"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Recipe.png width="200"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Favorites.png width="200">
+<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Start%20screen.png width="200"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Results.png width="200"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Recipe.png width="200"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Favorites.png width="200"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/Account.png width="200">
 
 ### Main features
 * Recepten zoeken op basis van ingrediënten die je nog hebt. 
