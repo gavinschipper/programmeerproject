@@ -20,7 +20,7 @@ Een app die op basis van de producten die jij nog hebt op zoek gaat naar recepte
 * Reviews schrijven over een recept
 
 ### MVP/optional
-Een gebruiker zal op zijn minst in staat moeten zijn om op basis van ingrediënten die hij/zij nog in huis heeft recepten te vinden. Verder zal men minstens een link naar de bereidingswijze moeten kunnen vinden die de gebruiker leidt naar de website waar het recept vandaan komt. Het is echter beter als de bereidingswijze binnen de app getoond wordt wanneer hier om gevraagd wordt. Ook het opslaan van recepten als favoriet moet mogelijk zijn, omdat een gebruiker anders steeds opnieuw naar hetzelfde recept moet zoeken. Dit kost veel tijd en moeite. 
+Een gebruiker zal op zijn minst in staat moeten zijn om op basis van ingrediënten die hij/zij nog in huis heeft recepten te vinden. Verder zal men minstens een link naar de bereidingswijze moeten kunnen vinden die de gebruiker leidt naar de website waar het recept vandaan komt. Het is echter beter als de bereidingswijze binnen de app getoond wordt wanneer hier om gevraagd wordt. Ook het opslaan van recepten als favoriet moet mogelijk zijn, omdat een gebruiker anders steeds opnieuw naar hetzelfde recept moet zoeken. Dit kost veel tijd en moeite. Tot slot zal een gebruiker nog in staat moeten zijn om reviews te schrijven over een recept en de reviews van andere gebruikers te bekijken.
 
 Een functie voor die app die optioneel is, is de mogelijkheid om een boodschappenlijstje te maken voor de producten die je nog wel moet halen voor het maken van een bepaald recept. 
 
