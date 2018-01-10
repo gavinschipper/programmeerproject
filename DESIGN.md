@@ -2,6 +2,7 @@
 <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/newFlow.png>
 
 ## Classes & functions
+<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/diagram.png>
 
 ## API
 Food2Fork Recipe API
@@ -13,3 +14,12 @@ De data source die bij deze app gebruikt wordt is de hierboven beschreven API. D
 * **GET Recipe**: Bij de GET Recipe functie kun je een een recipe ID meegeven. Je krijgt dan alle informatie over het recept terug,     waaronder de ingrediënten, de naam van het recept en op welke website de bereidingswijze van het recept te vinden is. De data       hoeft niet getransformeerd te worden. 
 
 ## Database
+* User
+  * username
+  * email
+  * favorites
+    * recipeID
+* Recipes
+  * recipeID
+    * reviews
+
