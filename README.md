@@ -33,3 +33,6 @@ Ik verwacht dat het moeilijkste onderdeel van de app wordt om ervoor te zorgen d
 ### External components
 * Firebase Database
 * Firebase Auth
+
+## Better Code Hub
+[![BCH compliance](https://bettercodehub.com/edge/badge/gavinschipper/programmeerproject?branch=master)](https://bettercodehub.com/)
