@@ -30,7 +30,7 @@
         <!--Account-->
         <scene sceneID="Xr8-gb-o0V">
             <objects>
-                <viewController id="Qqv-XD-NI7" sceneMemberID="viewController">
+                <viewController id="Qqv-XD-NI7" customClass="LoginViewController" customModule="ReceptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZGt-ro-aiM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,6 +61,9 @@
                                 <rect key="frame" x="168" y="255" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="Qqv-XD-NI7" eventType="touchUpInside" id="bjG-i7-RJ7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,6 +71,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" id="uvN-VH-lBK"/>
                     <navigationItem key="navigationItem" id="qOO-dq-yRa"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="zNb-ku-GFI" id="U2Y-aj-fIK"/>
+                        <outlet property="passwordTextField" destination="IKU-vS-nDP" id="uEh-ON-DlP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAj-br-zfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,7 +145,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReceptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -214,6 +220,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9o3-EZ-vfH"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1612" y="-964"/>
         </scene>
@@ -463,7 +470,6 @@
         <!--Recipes-->
         <scene sceneID="lRq-R5-eSJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m3c-dS-HhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="RC1-s3-uIV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recipes" id="XiR-Be-bnC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JNq-j7-r7v">
@@ -474,13 +480,14 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="64Q-ib-iEm"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3c-dS-HhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="649" y="-963"/>
         </scene>
-        <!--Recipes-->
+        <!--Favorites-->
         <scene sceneID="N0N-ii-HUc">
             <objects>
-                <tableViewController title="Recipes" id="4za-94-pcw" sceneMemberID="viewController">
+                <tableViewController title="Favorites" id="4za-94-pcw" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nx1-A7-HfC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
