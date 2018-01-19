@@ -9,3 +9,6 @@ Login functie en account maken in app gezet. Account maken en inloggen werkt, al
 
 # 18-1-2018
 Bezig geweest met het tonen van de resultaten in een table view. Wanneer gebruiker op de 'search' button drukt wordt hij doorgestuurd naar de resulatenpagina en de query wordt meegestuurd. Het tonen van de juiste data werkt helaas nog niet precies. 
+
+# 19-1-2018
+Het tonen van de resultaten werkt deels. De naam van de recepten wordt aangepast, alleen de afbeelding klopt nog niet. ImageURL staan met 'http' in de API. Xcode heeft moeite met 'http', dus ImageURL's moeten eigenlijk met 'https' zijn. Uitzoeken hoe ik dit het beste kan doen.
