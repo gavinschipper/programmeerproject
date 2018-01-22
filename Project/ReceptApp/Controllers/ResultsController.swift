@@ -28,14 +28,14 @@ class ResultsController {
     }
     
     // Haalt een specifiek recept op van de API
-    func fetchRecipeResult(query: [String], completion: @escaping (recipe?) -> Void) {
+    func fetchRecipeResult(query: String, completion: @escaping (searchedRecipe?) -> Void) {
         let url = URL(string: "https://food2fork.com/api/get?key=0bef0e09d13316b22b89a8b44b7e0666&rId=\(query)")!
         let task = URLSession.shared.dataTask(with: url) { (data,
             response, error) in
             let jsonDecoder = JSONDecoder()
             if let data = data,
-                let recipe = try? jsonDecoder.decode(recipe.self, from: data) {
-                completion(recipe)
+                let searchedRecipe = try? jsonDecoder.decode(searchedRecipe.self, from: data) {
+                completion(searchedRecipe)
             } else {
                 completion(nil)
             }

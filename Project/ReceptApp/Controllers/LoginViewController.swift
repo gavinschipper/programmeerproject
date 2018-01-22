@@ -11,14 +11,36 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
+    // Shown when not logged in
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var createAccountButton: UIButton!
     
+    // Shown when logged in
+    @IBOutlet weak var loggedInStackView: UIStackView!
+    @IBOutlet weak var loggedInLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var logOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let user = Auth.auth().currentUser
+        
+        if (user) == nil {
+//            statusLabel.isHidden = true
+            emailTextField.isHidden = true
+            passwordTextField.isHidden = true
+//            loginButton.isHidden = true
+//            createAccountButton.isHidden = true
+            
+//            loggedInStackView.isHidden = false
+//            logOutButton.isHidden = false
+        } else {
+            print("HI")
+        }
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {

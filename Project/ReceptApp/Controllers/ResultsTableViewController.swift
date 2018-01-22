@@ -72,19 +72,18 @@ class ResultsTableViewController: UITableViewController {
 
         cell.recipeName.text = results[indexPath.row].title
         let urlString = results[indexPath.row].imageURL
-        let url = URL(string: urlString)
+        let newUrlString = urlString.replacingOccurrences(of: "http://", with: "https://")
+        let url = URL(string: newUrlString)
         cell.recipeImage.downloadedFrom(url: url!, contentMode: .scaleAspectFill)
 
         return cell
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
-//        if segue.identifier == "showRecipeDetails" {
-//            let menuItemDetailViewController = segue.destination
-//                as! RecipeDetailViewController
-//            let index = tableView.indexPathForSelectedRow!.row
-//            //RecipeDetailViewController.recipe = results[index]
-//        }
-//    }
-
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
+        if segue.identifier == "showRecipeDetails" {
+            let RecipeDetailViewController = segue.destination as! RecipeDetailViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            RecipeDetailViewController.recipeID = results[index].recipeID
+        }
+    }
 }

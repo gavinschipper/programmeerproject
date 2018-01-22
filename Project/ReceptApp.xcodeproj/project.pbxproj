@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01244FD61B08DD1A14C8F324 /* Pods_ReceptApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE639045418ECF3D28586EF /* Pods_ReceptApp.framework */; };
+		DC1EC7D520160478002C67F4 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EC7D420160478002C67F4 /* IngredientsTableViewCell.swift */; };
 		DCA43231200E08CA00C9E517 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCA43230200E08CA00C9E517 /* GoogleService-Info.plist */; };
 		DCA43233200E0E4900C9E517 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43232200E0E4900C9E517 /* LoginViewController.swift */; };
 		DCA43253200E49DA00C9E517 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43252200E49DA00C9E517 /* SearchViewController.swift */; };
@@ -29,6 +30,7 @@
 		0BE17C30D573D545DA9EAA66 /* Pods-ReceptApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceptApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReceptApp/Pods-ReceptApp.debug.xcconfig"; sourceTree = "<group>"; };
 		227D7CB5F41D4F3E924B47FB /* Pods-ReceptApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceptApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReceptApp/Pods-ReceptApp.release.xcconfig"; sourceTree = "<group>"; };
 		7FE639045418ECF3D28586EF /* Pods_ReceptApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceptApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1EC7D420160478002C67F4 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		DCA43230200E08CA00C9E517 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DCA43232200E0E4900C9E517 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCA43252200E49DA00C9E517 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC1EC7D62016259E002C67F4 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DCA43267201146F700C9E517 /* RecipeTableViewCell.swift */,
+				DC1EC7D420160478002C67F4 /* IngredientsTableViewCell.swift */,
+				DCF41DAF201225A200286031 /* SearchTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		DCA43256200F5F1D00C9E517 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +97,6 @@
 				DCA4326320112A9600C9E517 /* CreateAccountViewController.swift */,
 				DCA4325D200F65DD00C9E517 /* ResultsController.swift */,
 				DCA43265201142AC00C9E517 /* ResultsTableViewController.swift */,
-				DCA43267201146F700C9E517 /* RecipeTableViewCell.swift */,
-				DCF41DAF201225A200286031 /* SearchTableViewCell.swift */,
 				DCF41DB120123F5D00286031 /* RecipeDetailViewController.swift */,
 			);
 			path = Controllers;
@@ -113,6 +123,7 @@
 		DCFD733B2007EEC90032BF6B /* ReceptApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC1EC7D62016259E002C67F4 /* TableViewCells */,
 				DCA43258200F5F3200C9E517 /* Controllers */,
 				DCA43256200F5F1D00C9E517 /* Models */,
 				DCFD733C2007EEC90032BF6B /* AppDelegate.swift */,
@@ -270,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1EC7D520160478002C67F4 /* IngredientsTableViewCell.swift in Sources */,
 				DCA43233200E0E4900C9E517 /* LoginViewController.swift in Sources */,
 				DCA43253200E49DA00C9E517 /* SearchViewController.swift in Sources */,
 				DCA4325C200F635F00C9E517 /* Recipe.swift in Sources */,

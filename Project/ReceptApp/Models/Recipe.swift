@@ -31,3 +31,7 @@ struct recipe: Codable {
         case title
     }
 }
+
+struct searchedRecipe: Codable {
+    let recipe: recipe
+}

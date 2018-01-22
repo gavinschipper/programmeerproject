@@ -20,7 +20,7 @@
         <scene sceneID="oPP-sF-ZuQ">
             <objects>
                 <navigationController id="c8F-ek-GWP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="qi1-VC-zBB"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="user-account-box" id="qi1-VC-zBB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1zP-sN-lZQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -141,8 +141,15 @@
                     <tabBarItem key="tabBarItem" title="Account" id="uvN-VH-lBK"/>
                     <navigationItem key="navigationItem" id="qOO-dq-yRa"/>
                     <connections>
+                        <outlet property="createAccountButton" destination="u3V-Dn-B5l" id="Tjo-aI-7Ta"/>
                         <outlet property="emailTextField" destination="zNb-ku-GFI" id="U2Y-aj-fIK"/>
+                        <outlet property="logOutButton" destination="yCB-oi-QNJ" id="tHb-gZ-COf"/>
+                        <outlet property="loggedInLabel" destination="DPp-Ll-uWT" id="cnU-Ns-UgA"/>
+                        <outlet property="loggedInStackView" destination="50j-vR-SeN" id="YpT-nk-DI3"/>
+                        <outlet property="loginButton" destination="TUf-0B-2N6" id="kmY-RW-j3x"/>
                         <outlet property="passwordTextField" destination="IKU-vS-nDP" id="uEh-ON-DlP"/>
+                        <outlet property="statusLabel" destination="nlq-Os-zwt" id="Gyv-lv-Yl7"/>
+                        <outlet property="usernameLabel" destination="j3A-Us-pc0" id="qKF-Xp-2cI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAj-br-zfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,7 +305,7 @@
                                                         <color key="titleColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="deleteButtonPressed:" destination="keB-93-lhn" eventType="touchUpInside" id="ME0-yi-CaB"/>
+                                                        <action selector="deleteButtonPressed:" destination="keB-93-lhn" eventType="touchUpInside" id="VPa-RT-1JW"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -382,11 +389,13 @@
                                         <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger_workshop" translatesAutoresizingMaskIntoConstraints="NO" id="EdF-Dz-qK4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZS-0w-Z5V">
-                                            <rect key="frame" x="16" y="209" width="343" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZS-0w-Z5V">
+                                            <rect key="frame" x="16" y="208" width="343" height="31"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -415,7 +424,7 @@
         <!--Recipe-->
         <scene sceneID="9Xf-O5-fbW">
             <objects>
-                <viewController title="Recipe" id="67Y-t8-NDt" sceneMemberID="viewController">
+                <viewController title="Recipe" id="67Y-t8-NDt" customClass="RecipeDetailViewController" customModule="ReceptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLm-86-buu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -433,34 +442,40 @@
                                     <constraint firstAttribute="height" constant="200" id="ESy-jt-Ssk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jj2-b0-ERx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientsCell" id="jj2-b0-ERx" customClass="IngredientsTableViewCell" customModule="ReceptApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jj2-b0-ERx" id="bnb-FO-kHN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 spoon of ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfe-Pp-mNT">
-                                                    <rect key="frame" x="15" y="11.5" width="345" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 spoon of ..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfe-Pp-mNT">
+                                                    <rect key="frame" x="15" y="11.5" width="345" height="21.5"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wfe-Pp-mNT" firstAttribute="centerY" secondItem="bnb-FO-kHN" secondAttribute="centerY" id="1gq-0v-vRr"/>
-                                                <constraint firstItem="wfe-Pp-mNT" firstAttribute="leading" secondItem="bnb-FO-kHN" secondAttribute="leadingMargin" id="AiY-SQ-QJd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wfe-Pp-mNT" secondAttribute="trailing" id="hbK-Tr-Ef6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wfe-Pp-mNT" secondAttribute="bottom" id="CJt-hs-vSf"/>
+                                                <constraint firstItem="wfe-Pp-mNT" firstAttribute="leading" secondItem="bnb-FO-kHN" secondAttribute="leadingMargin" id="Gdf-cx-New"/>
+                                                <constraint firstItem="wfe-Pp-mNT" firstAttribute="trailing" secondItem="bnb-FO-kHN" secondAttribute="trailingMargin" id="Q7l-3o-KXV"/>
+                                                <constraint firstItem="wfe-Pp-mNT" firstAttribute="top" secondItem="bnb-FO-kHN" secondAttribute="topMargin" id="h2w-YP-DKa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingredientString" destination="wfe-Pp-mNT" id="TLX-Ay-LUH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyp-KI-89o">
-                                <rect key="frame" x="16" y="226" width="343" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyp-KI-89o">
+                                <rect key="frame" x="16" y="225" width="343" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbE-3f-R7L">
                                 <rect key="frame" x="50" y="504" width="275" height="32"/>
@@ -476,6 +491,9 @@
                                 <state key="normal" title="Reviews">
                                     <color key="titleColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="nb3-UJ-YHg" kind="show" id="y0P-Vn-30U"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -498,6 +516,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gdE-dj-zki"/>
                     </view>
+                    <connections>
+                        <outlet property="ingredientsTableView" destination="x3f-mH-5vm" id="axF-uV-hXe"/>
+                        <outlet property="instructionsButton" destination="qbE-3f-R7L" id="GqF-fO-ZSl"/>
+                        <outlet property="recipeImage" destination="DXl-ia-tDd" id="m8w-hn-4tD"/>
+                        <outlet property="recipeName" destination="gyp-KI-89o" id="Gg3-yB-tbQ"/>
+                        <outlet property="reviewsButton" destination="gjH-mT-GSZ" id="og2-Ch-oRa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrM-Sk-TAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -638,7 +663,7 @@
         <scene sceneID="lRq-R5-eSJ">
             <objects>
                 <navigationController id="RC1-s3-uIV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recipes" id="XiR-Be-bnC"/>
+                    <tabBarItem key="tabBarItem" title="Recipes" image="restaurant" id="XiR-Be-bnC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JNq-j7-r7v">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -689,7 +714,7 @@
                             <outlet property="delegate" destination="4za-94-pcw" id="jRc-u5-7Fa"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="bw5-Hm-O6z"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star-2" id="bw5-Hm-O6z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPO-Cb-TDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -698,5 +723,8 @@
     </scenes>
     <resources>
         <image name="hamburger_workshop" width="450" height="300"/>
+        <image name="restaurant" width="16" height="16"/>
+        <image name="star-2" width="16" height="16"/>
+        <image name="user-account-box" width="16" height="16"/>
     </resources>
 </document>
