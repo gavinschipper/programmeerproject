@@ -13,5 +13,8 @@ Bezig geweest met het tonen van de resultaten in een table view. Wanneer gebruik
 # 19-1-2018
 Het tonen van de resultaten werkt deels. De naam van de recepten wordt aangepast, alleen de afbeelding klopt nog niet. ImageURL staan met 'http' in de API. Xcode heeft moeite met 'http', dus ImageURL's moeten eigenlijk met 'https' zijn. Uitzoeken hoe ik dit het beste kan doen.
 
-# 21-1-2018
+# 22-1-2018
 Het tonen van de resultaten werkt volledig. Ook de afbeeldingen worden correct ingeladen. DetailView werkt ook en alles wordt goed ingeladen. Het tonen van de instructions website werkt nog niet. Uitzoeken hoe dit precies werkt. Ook problemen bij login pagina. Geprobeerd om bepaalde textfields en labels te verbergen voor users die al ingelogd zijn. Deze worden nog voor het inloggen al gehide. Misschien omdat de log out button nog niet werkt? Morgen uitzoeken..
+
+# 23-1-2018
+Instructions website wordt soms correct getoond, en soms niet. Mogelijk een probleem met de URL's in de API. Login pagina, create account pagina en log out werken goed. De juiste textfields en labels worden aan de juiste gebruikers getoond. Bezig geweest met favorieten. Deze kunnen correct opgeslagen in en verwijderd worden uit de database. Het inladen in de app gaat nog niet vlekkeloos. Soms wordt er niks getoond en soms worden recepten dubbel getoond. Probleempje met de variabele waar de favorieten in opgeslagen worden. Deze moet gereset worden als de recepten opnieuw worden opgehaald. Morgen uitzoeken hoe dit moet. Verder besloten de 'reviews'-pagina te veranderen in een 'experiences'-pagina, waar mensen hun ervaring met een bepaald recept kunnen delen. Als er tijd over is alsnog een rating toevoegen, maar niet noodzakelijk. 
