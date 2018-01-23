@@ -8,13 +8,18 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SearchCellDelegate {
     
     var results = [searchResult]()
     var ingredients: [String] = []
+    var item = ""
     
     @IBOutlet weak var ingredientTextField: UITextField!
     @IBOutlet weak var ingredientsTableView: UITableView!
+    
+    @IBAction func returnPressed(_ sender: Any) {
+        ingredientTextField.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +71,22 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             self.ingredientsTableView.reloadData()
         }
+    }
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            item = ingredients[indexPath.row]
+            ingredients = ingredients.filter { $0 != item }
+            self.ingredientsTableView.reloadData()
+        }
+    }
+
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: ingredientsTableView)
+        if let indexPath: IndexPath = ingredientsTableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

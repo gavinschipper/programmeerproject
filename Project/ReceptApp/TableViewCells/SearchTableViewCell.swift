@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol SearchCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
+
 class SearchTableViewCell: UITableViewCell {
+    
+    weak var delegate: SearchCellDelegate?
     
     @IBOutlet weak var ingredientLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
-
-    @IBAction func deleteButtonPressed(_ sender: Any) {
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
     }
     
     override func awakeFromNib() {

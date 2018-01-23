@@ -11,10 +11,11 @@ import Firebase
 
 class CreateAccountViewController: UIViewController {
     
+    let ref: DatabaseReference! = Database.database().reference()
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class CreateAccountViewController: UIViewController {
         } else {
             
             let email = self.emailTextField.text!
-            //let username = self.usernameTextField.text!
+            let username = self.usernameTextField.text!
             let password = self.passwordTextField.text!
             
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -44,16 +45,22 @@ class CreateAccountViewController: UIViewController {
                 // Als er geen error is, ga terug naar login pagina
                 if error == nil {
                     
-//                    let ref: DatabaseReference! = Database.database().reference()
-//
-//                    ref.child("Users").child(email).setValue(["username": username])
+                    guard let uid = user?.uid else {
+                        print("uid kon niet opgehaald worden")
+                        return
+                    }
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
+                    let userReference = self.ref.child("users").child(uid)
+                    let values = ["username": username, "email": email]
+                    
+                    userReference.updateChildValues(values)
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "startScherm")
                     self.present(vc!, animated: true, completion: nil)
                     
                 }
                     
-                    // Als er een error is, laat een waarschuwing zien met wat het probleem is.
+                // Als er een error is, laat een waarschuwing zien met wat het probleem is.
                 else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
@@ -68,20 +75,12 @@ class CreateAccountViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    */
 
 }
