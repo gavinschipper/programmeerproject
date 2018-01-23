@@ -12,3 +12,6 @@ Bezig geweest met het tonen van de resultaten in een table view. Wanneer gebruik
 
 # 19-1-2018
 Het tonen van de resultaten werkt deels. De naam van de recepten wordt aangepast, alleen de afbeelding klopt nog niet. ImageURL staan met 'http' in de API. Xcode heeft moeite met 'http', dus ImageURL's moeten eigenlijk met 'https' zijn. Uitzoeken hoe ik dit het beste kan doen.
+
+# 21-1-2018
+Het tonen van de resultaten werkt volledig. Ook de afbeeldingen worden correct ingeladen. DetailView werkt ook en alles wordt goed ingeladen. Het tonen van de instructions website werkt nog niet. Uitzoeken hoe dit precies werkt. Ook problemen bij login pagina. Geprobeerd om bepaalde textfields en labels te verbergen voor users die al ingelogd zijn. Deze worden nog voor het inloggen al gehide. Misschien omdat de log out button nog niet werkt? Morgen uitzoeken..
