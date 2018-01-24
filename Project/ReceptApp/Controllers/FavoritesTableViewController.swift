@@ -20,28 +20,30 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let userID = Auth.auth().currentUser?.uid
+        
+        let ref: DatabaseReference! = Database.database().reference()
         if Auth.auth().currentUser != nil {
-            
-            let userID = Auth.auth().currentUser?.uid
-            
-            let ref: DatabaseReference! = Database.database().reference()
-            
             ref.child("users").child(userID!).child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
                 
-                for child in snapshot.children {
-                    
-                    let snap = child as! DataSnapshot
-                    let key = snap.key
-                    
-                    ResultsController.shared.fetchRecipeResult(query: key) { (searchedRecipe) in
-                        if let searchedRecipe = searchedRecipe {
-                            self.favorites.append(searchedRecipe.recipe)
-                        }
+                if snapshot.childrenCount > 0 {
+                    self.favorites = []
+                    for favorite in snapshot.children.allObjects as! [DataSnapshot] {
+                        let favoriteObject = favorite.value as? [String: AnyObject]
+                        let id = favoriteObject?["id"]
+                        let title = favoriteObject?["title"]
+                        let image = favoriteObject?["image"]
+                        let source = favoriteObject?["source"]
+                        let ingredients = favoriteObject?["ingredients"]
+                        
+                        let favoriteToBeAdded = recipe(ingredients: ingredients as! [String], sourceURL: source as! String, recipeID: id as! String, imageURL: image as! String, title: title as! String)
+                        
+                        self.favorites.append(favoriteToBeAdded)
                     }
+                    self.tableView.reloadData()
                 }
             })
         }
-        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +51,6 @@ class FavoritesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(favorites.count)
         return favorites.count
     }
     
@@ -67,6 +68,14 @@ class FavoritesTableViewController: UITableViewController {
         cell.recipeImage.downloadedFrom(url: url!, contentMode: .scaleAspectFill)
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
+        if segue.identifier == "showRecipeDetails" {
+            let RecipeDetailViewController = segue.destination as! RecipeDetailViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            RecipeDetailViewController.recipeID = favorites[index].recipeID
+        }
     }
 
 }

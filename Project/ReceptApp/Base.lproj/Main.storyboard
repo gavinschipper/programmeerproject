@@ -524,7 +524,7 @@
                                     <color key="titleColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nb3-UJ-YHg" kind="show" id="y0P-Vn-30U"/>
+                                    <segue destination="nb3-UJ-YHg" kind="show" identifier="showExperiences" id="y0P-Vn-30U"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I44-jz-9tz">
@@ -652,73 +652,70 @@
         <!--Experiences-->
         <scene sceneID="NHo-Xn-ts1">
             <objects>
-                <viewController title="Experiences" id="nb3-UJ-YHg" sceneMemberID="viewController">
+                <viewController title="Experiences" id="nb3-UJ-YHg" customClass="ExperiencesViewController" customModule="ReceptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6w-0Z-o8I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Big-data-Exhaustive-review-pulls-together-evidence-on-food-groups-and-diet-related-disease" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-Vc-XgR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrX-62-7df">
-                                <rect key="frame" x="16" y="60" width="343" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="60" width="343" height="28"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH2-vr-UiL">
-                                <rect key="frame" x="80" y="113.5" width="215" height="32"/>
+                                <rect key="frame" x="80" y="118" width="215" height="32"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Share your experience">
                                     <color key="titleColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uvZ-RV-pce" kind="show" id="f0x-Ln-m8U"/>
+                                    <segue destination="uvZ-RV-pce" kind="show" identifier="showWriteExperience" id="f0x-Ln-m8U"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MY0-u8-tZb">
-                                <rect key="frame" x="16" y="175.5" width="343" height="358.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MY0-u8-tZb">
+                                <rect key="frame" x="16" y="180" width="343" height="354"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="YXR-uW-rUy">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="experienceCell" rowHeight="100" id="YXR-uW-rUy" customClass="ExperienceTableViewCell" customModule="ReceptApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YXR-uW-rUy" id="2Lw-hu-6rc">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xH-Zb-PYt">
-                                                    <rect key="frame" x="15" y="11" width="313" height="98"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uc-3B-4xg">
-                                                            <rect key="frame" x="8" y="8" width="297" height="20"/>
-                                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ex rebus enim timiditas, non ex vocabulis nascitur. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCb-Sx-2og">
-                                                            <rect key="frame" x="8" y="36" width="297" height="42"/>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstItem="nCb-Sx-2og" firstAttribute="top" secondItem="7uc-3B-4xg" secondAttribute="bottom" constant="8" id="ASg-Sd-Oro"/>
-                                                        <constraint firstAttribute="trailing" secondItem="7uc-3B-4xg" secondAttribute="trailing" constant="8" id="GmV-Yq-eqA"/>
-                                                        <constraint firstAttribute="trailing" secondItem="nCb-Sx-2og" secondAttribute="trailing" constant="8" id="HzK-BG-Uzu"/>
-                                                        <constraint firstItem="7uc-3B-4xg" firstAttribute="top" secondItem="6xH-Zb-PYt" secondAttribute="top" constant="8" id="Phm-BU-8s0"/>
-                                                        <constraint firstItem="7uc-3B-4xg" firstAttribute="leading" secondItem="6xH-Zb-PYt" secondAttribute="leading" constant="8" id="fcv-7v-zmI"/>
-                                                        <constraint firstItem="nCb-Sx-2og" firstAttribute="leading" secondItem="6xH-Zb-PYt" secondAttribute="leading" constant="8" id="rDx-X6-V1r"/>
-                                                    </constraints>
-                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uc-3B-4xg">
+                                                    <rect key="frame" x="15" y="11" width="313" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ex rebus enim timiditas, non ex vocabulis nascitur. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCb-Sx-2og">
+                                                    <rect key="frame" x="15" y="36.5" width="313" height="45.5"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="6xH-Zb-PYt" secondAttribute="trailing" id="Ltz-qU-b77"/>
-                                                <constraint firstItem="6xH-Zb-PYt" firstAttribute="leading" secondItem="2Lw-hu-6rc" secondAttribute="leadingMargin" id="N6h-wt-EkL"/>
-                                                <constraint firstItem="6xH-Zb-PYt" firstAttribute="bottom" secondItem="2Lw-hu-6rc" secondAttribute="bottomMargin" id="Qr6-RX-yMp"/>
-                                                <constraint firstItem="6xH-Zb-PYt" firstAttribute="top" secondItem="2Lw-hu-6rc" secondAttribute="topMargin" id="fjf-gm-KQ9"/>
+                                                <constraint firstItem="nCb-Sx-2og" firstAttribute="top" secondItem="7uc-3B-4xg" secondAttribute="bottom" constant="8" id="1KV-UB-Zes"/>
+                                                <constraint firstItem="nCb-Sx-2og" firstAttribute="trailing" secondItem="2Lw-hu-6rc" secondAttribute="trailingMargin" id="D5C-Se-8ZW"/>
+                                                <constraint firstItem="7uc-3B-4xg" firstAttribute="leading" secondItem="2Lw-hu-6rc" secondAttribute="leadingMargin" id="Knl-1T-Cyg"/>
+                                                <constraint firstItem="7uc-3B-4xg" firstAttribute="trailing" secondItem="2Lw-hu-6rc" secondAttribute="trailingMargin" id="Rn2-2d-jDN"/>
+                                                <constraint firstItem="7uc-3B-4xg" firstAttribute="top" secondItem="2Lw-hu-6rc" secondAttribute="topMargin" id="duU-y8-lqo"/>
+                                                <constraint firstItem="nCb-Sx-2og" firstAttribute="top" secondItem="7uc-3B-4xg" secondAttribute="bottom" constant="8" id="ljM-RK-gAV"/>
+                                                <constraint firstItem="nCb-Sx-2og" firstAttribute="leading" secondItem="2Lw-hu-6rc" secondAttribute="leadingMargin" id="pXw-FJ-z1y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="experienceText" destination="nCb-Sx-2og" id="5Dy-kj-RbS"/>
+                                            <outlet property="usernameLabel" destination="7uc-3B-4xg" id="Ten-oK-uEN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -737,59 +734,83 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ugT-zR-5ef"/>
                     </view>
+                    <connections>
+                        <outlet property="experiencesTableView" destination="MY0-u8-tZb" id="mzz-2W-9tz"/>
+                        <outlet property="recipeNameLabel" destination="vrX-62-7df" id="V13-Gp-mWt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyX-qs-4IF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4288.8000000000002" y="-966.56671664167925"/>
         </scene>
-        <!--View Controller-->
+        <!--Write Experience View Controller-->
         <scene sceneID="YLD-Bc-VJh">
             <objects>
-                <viewController id="uvZ-RV-pce" sceneMemberID="viewController">
+                <viewController id="uvZ-RV-pce" customClass="WriteExperienceViewController" customModule="ReceptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iS0-uU-TLy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBJ-YO-dM0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="1l6-6Q-zgy">
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="54Y-PT-Gfw"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hamburger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56y-Us-wwM">
-                                <rect key="frame" x="81" y="101" width="212" height="45"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Big-data-Exhaustive-review-pulls-together-evidence-on-food-groups-and-diet-related-disease" translatesAutoresizingMaskIntoConstraints="NO" id="FWQ-7U-8Mq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56y-Us-wwM">
+                                <rect key="frame" x="50" y="60" width="275" height="28"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHp-iQ-fxj">
-                                <rect key="frame" x="167" y="171" width="40" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-s7-IJm">
-                                <rect key="frame" x="37" y="226" width="301" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-RH-1E3">
+                                <rect key="frame" x="50" y="474" width="275" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="uvZ-RV-pce" eventType="touchUpInside" id="EaU-QP-GRA"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="FgU-8b-BPb">
+                                <rect key="frame" x="50" y="180.5" width="275" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="jvR-RZ-l4J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-RH-1E3">
-                                <rect key="frame" x="170" y="488" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your experiences with this recipe. Do you have any tips for other home cooks?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wv-P3-dH2">
+                                <rect key="frame" x="50" y="108" width="275" height="52.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <color key="textColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="56y-Us-wwM" firstAttribute="leading" secondItem="K7k-Y0-vCi" secondAttribute="leading" constant="50" id="00r-RI-cHs"/>
+                            <constraint firstItem="Pt2-RH-1E3" firstAttribute="leading" secondItem="K7k-Y0-vCi" secondAttribute="leading" constant="50" id="6EB-AZ-Dxp"/>
+                            <constraint firstItem="5wv-P3-dH2" firstAttribute="leading" secondItem="K7k-Y0-vCi" secondAttribute="leading" constant="50" id="7ko-Zd-Q4x"/>
+                            <constraint firstItem="K7k-Y0-vCi" firstAttribute="trailing" secondItem="5wv-P3-dH2" secondAttribute="trailing" constant="50" id="91I-KU-IIp"/>
+                            <constraint firstItem="FgU-8b-BPb" firstAttribute="top" secondItem="5wv-P3-dH2" secondAttribute="bottom" constant="20" id="Cbq-yV-x0d"/>
+                            <constraint firstItem="FgU-8b-BPb" firstAttribute="leading" secondItem="K7k-Y0-vCi" secondAttribute="leading" constant="50" id="H1v-9o-b5S"/>
+                            <constraint firstItem="K7k-Y0-vCi" firstAttribute="trailing" secondItem="FgU-8b-BPb" secondAttribute="trailing" constant="50" id="LAv-Qb-Acz"/>
+                            <constraint firstItem="56y-Us-wwM" firstAttribute="top" secondItem="K7k-Y0-vCi" secondAttribute="top" constant="60" id="U7e-fU-V2m"/>
+                            <constraint firstItem="K7k-Y0-vCi" firstAttribute="trailing" secondItem="56y-Us-wwM" secondAttribute="trailing" constant="50" id="aXc-6m-jpF"/>
+                            <constraint firstItem="K7k-Y0-vCi" firstAttribute="trailing" secondItem="Pt2-RH-1E3" secondAttribute="trailing" constant="50" id="f9M-3S-RaU"/>
+                            <constraint firstItem="K7k-Y0-vCi" firstAttribute="bottom" secondItem="Pt2-RH-1E3" secondAttribute="bottom" constant="50" id="g6t-qi-KYW"/>
+                            <constraint firstItem="5wv-P3-dH2" firstAttribute="top" secondItem="56y-Us-wwM" secondAttribute="bottom" constant="20" id="mcj-9F-w5S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K7k-Y0-vCi"/>
                     </view>
+                    <connections>
+                        <outlet property="recipeNameLabel" destination="56y-Us-wwM" id="bFt-dL-ulg"/>
+                        <outlet property="saveButton" destination="Pt2-RH-1E3" id="bwo-ta-jLp"/>
+                        <outlet property="storyTextView" destination="FgU-8b-BPb" id="rxR-Vr-7fd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEE-V7-m7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -845,7 +866,7 @@
                                         <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grey-3" translatesAutoresizingMaskIntoConstraints="NO" id="G14-LL-1Vq" userLabel="Recipe Image">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXX-2S-SxS" userLabel="Recipe Name">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXX-2S-SxS" userLabel="Recipe Name">
                                             <rect key="frame" x="16" y="239" width="343" height="0.0"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -867,7 +888,7 @@
                                 <connections>
                                     <outlet property="recipeImage" destination="G14-LL-1Vq" id="BgF-3H-Wkx"/>
                                     <outlet property="recipeName" destination="VXX-2S-SxS" id="wYG-oo-har"/>
-                                    <segue destination="67Y-t8-NDt" kind="show" id="ueL-ke-CJG"/>
+                                    <segue destination="67Y-t8-NDt" kind="show" identifier="showRecipeDetails" id="ueL-ke-CJG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -897,7 +918,7 @@
         <image name="user-account-box" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZVC-yE-OZZ"/>
+        <segue reference="ueL-ke-CJG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

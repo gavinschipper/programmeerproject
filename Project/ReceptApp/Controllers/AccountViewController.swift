@@ -40,7 +40,6 @@ class AccountViewController: UIViewController {
             
             ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
-                print(snapshot)
                 let value = snapshot.value as? NSDictionary
                 let username = value?["username"] as? String ?? ""
                 self.usernameLabel.text = username

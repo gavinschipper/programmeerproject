@@ -44,10 +44,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
             let userID = Auth.auth().currentUser?.uid
             ref.child("users").child(userID!).child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
                 
-                print(snapshot)
-                
                 for child in snapshot.children {
-                    print(child)
                     
                     let snap = child as! DataSnapshot
                     let key = snap.key
@@ -70,7 +67,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         let userReference = self.ref.child("users").child(userID!).child("favorites")
         
         if isFavoriteButton.isSelected == true {
-            userReference.child(recipeID).setValue(["id":recipeID, "title":chosenRecipe.title, "image":chosenRecipe.imageURL])
+            userReference.child(recipeID).setValue(["id":recipeID, "title":chosenRecipe.title, "image":chosenRecipe.imageURL, "source":chosenRecipe.sourceURL, "ingredients":chosenRecipe.ingredients])
             
         } else if isFavoriteButton.isSelected != true {
             userReference.child(recipeID).removeValue()
@@ -117,6 +114,12 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
             let InstructionsViewController = segue.destination as! InstructionsViewController
             let instructionsURL = chosenRecipe.sourceURL
             InstructionsViewController.recipeURL = instructionsURL
+        }
+        
+        if segue.identifier == "showExperiences" {
+            let ExperiencesViewController = segue.destination as! ExperiencesViewController
+            let recipe = chosenRecipe
+            ExperiencesViewController.chosenRecipe = recipe
         }
     }
 
