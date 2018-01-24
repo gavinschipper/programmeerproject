@@ -18,3 +18,6 @@ Het tonen van de resultaten werkt volledig. Ook de afbeeldingen worden correct i
 
 # 23-1-2018
 Instructions website wordt soms correct getoond, en soms niet. Mogelijk een probleem met de URL's in de API. Login pagina, create account pagina en log out werken goed. De juiste textfields en labels worden aan de juiste gebruikers getoond. Bezig geweest met favorieten. Deze kunnen correct opgeslagen in en verwijderd worden uit de database. Het inladen in de app gaat nog niet vlekkeloos. Soms wordt er niks getoond en soms worden recepten dubbel getoond. Probleempje met de variabele waar de favorieten in opgeslagen worden. Deze moet gereset worden als de recepten opnieuw worden opgehaald. Morgen uitzoeken hoe dit moet. Verder besloten de 'reviews'-pagina te veranderen in een 'experiences'-pagina, waar mensen hun ervaring met een bepaald recept kunnen delen. Als er tijd over is alsnog een rating toevoegen, maar niet noodzakelijk. 
+
+# 24-1-2018
+Favorieten worden nu correct ingeladen en getoond. Experiences-pagina werkt ook. Gebruikers kunnen experiences toevoegen aan een recept en deze worden correct getoond. Wel nog werken aan de layout van de experiences-pagina. Cell hoogte moet nog afhankelijk gemaakt worden van hoe lang de tekst is. In principe zitten alle functies in de app, maar sommige werken nog buggy. 
