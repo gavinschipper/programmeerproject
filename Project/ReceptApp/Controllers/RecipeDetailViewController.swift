@@ -15,19 +15,22 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     var chosenRecipe: recipe!
     var recipeID = ""
+    var experienceCount: Int = 0
 
     @IBOutlet weak var isFavoriteButton: UIButton!
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var ingredientsTableView: UITableView!
     @IBOutlet weak var instructionsButton: UIButton!
-    @IBOutlet weak var reviewsButton: UIButton!
+    @IBOutlet weak var experiencesButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ingredientsTableView.delegate = self
         ingredientsTableView.dataSource = self
+        
+        getExperienceCount()
         
         ResultsController.shared.fetchRecipeResult(query: recipeID) { (searchedRecipe) in
             if let searchedRecipe = searchedRecipe {
@@ -36,28 +39,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
         
-        if Auth.auth().currentUser == nil {
-            isFavoriteButton.isHidden = true
-        } else {
-            var recipeIDs: [String] = []
-            
-            let userID = Auth.auth().currentUser?.uid
-            ref.child("users").child(userID!).child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                for child in snapshot.children {
-                    
-                    let snap = child as! DataSnapshot
-                    let key = snap.key
-                    
-                    recipeIDs.append(key)
-                }
-                
-                if recipeIDs.contains(self.recipeID) {
-                    self.isFavoriteButton.isSelected = true
-                }
-            })
-            
-        }
+        switchFavorite()
     }
     
     @IBAction func isFavoriteButtonPressed(_ sender: Any) {
@@ -83,8 +65,40 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
             
             self.recipeName.text = recipe.title
             
+            self.experiencesButton.setTitle("Experiences (\(self.experienceCount))", for: .normal)
+            
             self.ingredientsTableView.reloadData()
         }
+    }
+    
+    func switchFavorite() {
+        if Auth.auth().currentUser == nil {
+            isFavoriteButton.isHidden = true
+        } else {
+            var recipeIDs: [String] = []
+            
+            let userID = Auth.auth().currentUser?.uid
+            ref.child("users").child(userID!).child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                for child in snapshot.children {
+                    
+                    let snap = child as! DataSnapshot
+                    let key = snap.key
+                    
+                    recipeIDs.append(key)
+                }
+                
+                if recipeIDs.contains(self.recipeID) {
+                    self.isFavoriteButton.isSelected = true
+                }
+            })
+        }
+    }
+    
+    func getExperienceCount() {
+        ref.child("experiences").child(recipeID).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.experienceCount = Int(snapshot.childrenCount)
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

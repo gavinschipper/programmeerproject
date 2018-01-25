@@ -14,7 +14,7 @@ protocol SearchCellDelegate: class {
 
 class SearchTableViewCell: UITableViewCell {
     
-    weak var delegate: SearchCellDelegate?
+    var delegate: SearchCellDelegate?
     
     @IBOutlet weak var ingredientLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!

@@ -37,6 +37,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTableViewCell
         
+        cell.delegate = self
+        
         cell.ingredientLabel.text = ingredients[indexPath.row]
         
         return cell
@@ -75,9 +77,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func didTapButton(_ sender: UIButton) {
         if let indexPath = getCurrentCellIndexPath(sender) {
-            item = ingredients[indexPath.row]
-            ingredients = ingredients.filter { $0 != item }
-            self.ingredientsTableView.reloadData()
+            ingredients.remove(at: indexPath.row)
+            ingredientsTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
@@ -102,7 +103,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

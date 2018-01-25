@@ -17,6 +17,7 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
     var experiences = [experience]()
 
     @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var shareExperienceButton: UIButton!
     @IBOutlet weak var experiencesTableView: UITableView!
     
     override func viewDidLoad() {
@@ -26,6 +27,10 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
         experiencesTableView.dataSource = self
         
         recipeNameLabel.text = chosenRecipe.title
+        
+        if Auth.auth().currentUser == nil {
+            shareExperienceButton.isHidden = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		01244FD61B08DD1A14C8F324 /* Pods_ReceptApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE639045418ECF3D28586EF /* Pods_ReceptApp.framework */; };
 		DC023CD8201663AB000C119C /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC023CD7201663AB000C119C /* InstructionsViewController.swift */; };
-		DC023CDA2017C661000C119C /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC023CD92017C661000C119C /* FavoritesTableViewController.swift */; };
 		DC1EC7D520160478002C67F4 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EC7D420160478002C67F4 /* IngredientsTableViewCell.swift */; };
+		DC445A8A201A2B9200DE6FBA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC445A89201A2B9200DE6FBA /* FavoritesViewController.swift */; };
 		DC8EB76E2018C11000B64720 /* WriteExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB76D2018C11000B64720 /* WriteExperienceViewController.swift */; };
 		DC8EB7702018CAA300B64720 /* ExperiencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB76F2018CAA300B64720 /* ExperiencesViewController.swift */; };
 		DC8EB77220192D3800B64720 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB77120192D3800B64720 /* ExperienceTableViewCell.swift */; };
@@ -37,8 +37,8 @@
 		227D7CB5F41D4F3E924B47FB /* Pods-ReceptApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceptApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReceptApp/Pods-ReceptApp.release.xcconfig"; sourceTree = "<group>"; };
 		7FE639045418ECF3D28586EF /* Pods_ReceptApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceptApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC023CD7201663AB000C119C /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
-		DC023CD92017C661000C119C /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		DC1EC7D420160478002C67F4 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		DC445A89201A2B9200DE6FBA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		DC8EB76D2018C11000B64720 /* WriteExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteExperienceViewController.swift; sourceTree = "<group>"; };
 		DC8EB76F2018CAA300B64720 /* ExperiencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewController.swift; sourceTree = "<group>"; };
 		DC8EB77120192D3800B64720 /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				DCA43265201142AC00C9E517 /* ResultsTableViewController.swift */,
 				DCF41DB120123F5D00286031 /* RecipeDetailViewController.swift */,
 				DC023CD7201663AB000C119C /* InstructionsViewController.swift */,
-				DC023CD92017C661000C119C /* FavoritesTableViewController.swift */,
+				DC445A89201A2B9200DE6FBA /* FavoritesViewController.swift */,
 				DC8EB76F2018CAA300B64720 /* ExperiencesViewController.swift */,
 				DC8EB76D2018C11000B64720 /* WriteExperienceViewController.swift */,
 			);
@@ -306,9 +306,9 @@
 				DCA4325C200F635F00C9E517 /* Recipe.swift in Sources */,
 				DC8EB7702018CAA300B64720 /* ExperiencesViewController.swift in Sources */,
 				DCFD733D2007EEC90032BF6B /* AppDelegate.swift in Sources */,
-				DC023CDA2017C661000C119C /* FavoritesTableViewController.swift in Sources */,
 				DCA4326420112A9600C9E517 /* CreateAccountViewController.swift in Sources */,
 				DC8EB77220192D3800B64720 /* ExperienceTableViewCell.swift in Sources */,
+				DC445A8A201A2B9200DE6FBA /* FavoritesViewController.swift in Sources */,
 				DCA43268201146F700C9E517 /* RecipeTableViewCell.swift in Sources */,
 				DCA43266201142AC00C9E517 /* ResultsTableViewController.swift in Sources */,
 				DCF41DB220123F5D00286031 /* RecipeDetailViewController.swift in Sources */,

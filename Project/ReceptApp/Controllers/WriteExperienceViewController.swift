@@ -40,25 +40,39 @@ class WriteExperienceViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         if Auth.auth().currentUser != nil {
+            
+            if storyTextView.text == "" {
+                // create the alert
+                let alert = UIAlertController(title: "Error", message: "You didn't write any experiences to be added.", preferredStyle: UIAlertControllerStyle.alert)
                 
-            let expReference = ref.child("experiences").child(chosenRecipe.recipeID)
-            
-            let expID = ref.childByAutoId().key
-            
-            expReference.child(expID).setValue(["userID": userID!, "username": username, "experienceText": storyTextView.text!])
-            
-            storyTextView.text = ""
-            
-            // create the alert
-            let alert = UIAlertController(title: "Thanks!", message: "Your experience with this recipe was added and is now accessible for others.", preferredStyle: UIAlertControllerStyle.alert)
-            
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
-                self.navigationController?.popViewController(animated: true)
-            }))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
+                // add an action (button)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(defaultAction)
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+                
+            } else {
+                
+                let expReference = ref.child("experiences").child(chosenRecipe.recipeID)
+                
+                let expID = ref.childByAutoId().key
+                
+                expReference.child(expID).setValue(["userID": userID!, "username": username, "experienceText": storyTextView.text!])
+                
+                storyTextView.text = ""
+                
+                // create the alert
+                let alert = UIAlertController(title: "Thanks!", message: "Your experience with this recipe was added and is now accessible for others.", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
