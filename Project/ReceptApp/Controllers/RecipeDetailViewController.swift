@@ -79,21 +79,14 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         if Auth.auth().currentUser == nil {
             isFavoriteButton.isHidden = true
         } else {
-            var recipeIDs: [String] = []
-            
             let userID = Auth.auth().currentUser?.uid
             ref.child("users").child(userID!).child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 for child in snapshot.children {
-                    
                     let snap = child as! DataSnapshot
-                    let key = snap.key
-                    
-                    recipeIDs.append(key)
-                }
-                
-                if recipeIDs.contains(self.recipeID) {
-                    self.isFavoriteButton.isSelected = true
+                    if snap.key == self.recipeID {
+                        self.isFavoriteButton.isSelected = true
+                    }
                 }
             })
         }
