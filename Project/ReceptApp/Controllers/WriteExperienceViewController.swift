@@ -27,11 +27,9 @@ class WriteExperienceViewController: UIViewController {
         
         recipeNameLabel.text = chosenRecipe.title
         
-        storyTextView.layer.cornerRadius = 10
         storyTextView.layer.borderWidth = 3.0
         let appRed = UIColor(red: 204/255, green: 83/255, blue: 67/255, alpha: 1)
         storyTextView.layer.borderColor = appRed.cgColor
-        saveButton.layer.cornerRadius = 5.0
         
         retrieveUsername()
     }

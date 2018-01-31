@@ -29,9 +29,17 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         setupSearchBar()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         favoritesSearchBar.text = ""
+        favoritesTableView.alpha = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         updateUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        favoritesSearchBar.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -140,8 +148,12 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.favoritesSearchBar.endEditing(true)
     }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.favoritesSearchBar.endEditing(true)
+//    }
     
 }

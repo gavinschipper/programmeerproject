@@ -122,6 +122,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		DCDA083520224F7000F96386 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DCFD733C2007EEC90032BF6B /* AppDelegate.swift */,
+				DCDA08312021E61F00F96386 /* Extensions.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		DCFD73302007EEC90032BF6B = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +155,7 @@
 				DC1EC7D62016259E002C67F4 /* TableViewCells */,
 				DCA43258200F5F3200C9E517 /* Controllers */,
 				DCA43256200F5F1D00C9E517 /* Models */,
-				DCFD733C2007EEC90032BF6B /* AppDelegate.swift */,
-				DCDA08312021E61F00F96386 /* Extensions.swift */,
+				DCDA083520224F7000F96386 /* Other */,
 				DCFD73402007EEC90032BF6B /* Main.storyboard */,
 				DCFD73432007EEC90032BF6B /* Assets.xcassets */,
 				DCFD73452007EEC90032BF6B /* LaunchScreen.storyboard */,
