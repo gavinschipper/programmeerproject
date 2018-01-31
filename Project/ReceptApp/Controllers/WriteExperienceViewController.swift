@@ -45,15 +45,7 @@ class WriteExperienceViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             
             if storyTextView.text == "" {
-                // create the alert
-                let alert = UIAlertController(title: "Error", message: "You didn't write any experiences to be added.", preferredStyle: UIAlertControllerStyle.alert)
-                
-                // add an action (button)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(defaultAction)
-                
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
+                showAlert(title: "Error", message: "You didn't write any experiences to be added.")
                 
             } else {
                 

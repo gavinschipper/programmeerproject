@@ -49,15 +49,7 @@ class AccountViewController: UIViewController {
         //Als email, wachtwoord of beide leeg zijn krijgt de gebruiker een error
         if self.emailTextField.text == "" || self.passwordTextField.text == "" {
             
-            //Alert die de gebruiker vertelt dat ze iets moeten invullen bij email en wachtwoord.
-            
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
-            
-            //zorgt ervoor dat de alert weggeklikt kan worden
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            showAlert(title: "Error", message: "Please enter an email and password.")
             
         } else {
             
@@ -71,18 +63,9 @@ class AccountViewController: UIViewController {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "startScherm")
                     self.present(vc!, animated: true, completion: nil)
                     
-                    
                     // Wordt uitgevoerd als de gegevens niet kloppen
                 } else {
-                    
-                    //laat de gebruiker een alert zien met wat er precies fout is gegaan.
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    
-                    //zorgt ervoor dat de alert weggeklikt kan worden
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
+                    self.showAlert(title: "Error", message: (error?.localizedDescription)!)
                 }
             }
         }

@@ -69,6 +69,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
             })
         } else {
+            favoritesTableView.alpha = 0
             loginWarning()
         }
     }

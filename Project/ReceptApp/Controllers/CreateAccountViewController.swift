@@ -26,13 +26,7 @@ class CreateAccountViewController: UIViewController {
     @IBAction func createAccountButtonPressed(_ sender: Any) {
         
         if emailTextField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
-            
-            // zorgt ervoor dat de alert weggeklikt kan worden
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
+            showAlert(title: "Error", message: "Please enter your email and password")
             
         } else {
             let email = self.emailTextField.text!
@@ -57,12 +51,7 @@ class CreateAccountViewController: UIViewController {
                 self.present(vc!, animated: true, completion: nil)
                 
             }   else {
-                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-                
-                self.present(alertController, animated: true, completion: nil)
+                    self.showAlert(title: "Error", message: (error?.localizedDescription)!)
             }
         }
     }
