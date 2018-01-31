@@ -1034,7 +1034,7 @@
         <image name="user-account-box" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ljb-TP-Taz"/>
+        <segue reference="JbB-eG-Yle"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

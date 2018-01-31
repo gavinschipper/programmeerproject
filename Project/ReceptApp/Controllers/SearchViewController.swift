@@ -52,21 +52,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let stringCount = seperatedStringCount?.count
         
         if ingredientTextField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "There is nothing to be added to the ingredient list.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            showAlert(title: "Error", message: "There is nothing to be added to the ingredient list.")
         }
         
         else if stringCount! > 1 {
-            let alertController = UIAlertController(title: "Error", message: "An ingredient can only consist of one word.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            showAlert(title: "Error", message: "An ingredient can only consist of one word.")
         }
         
         else {
@@ -76,6 +66,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             self.ingredientsTableView.reloadData()
         }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // delete ingredient
