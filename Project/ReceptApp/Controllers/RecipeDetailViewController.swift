@@ -32,6 +32,13 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         getExperienceCount()
         
+        isFavoriteButton.alpha = 0
+        recipeImage.alpha = 0
+        recipeName.alpha = 0
+        ingredientsTableView.alpha = 0
+        instructionsButton.alpha = 0
+        experiencesButton.alpha = 0
+        
         ResultsController.shared.fetchRecipeResult(query: recipeID) { (searchedRecipe) in
             if let searchedRecipe = searchedRecipe {
                 self.chosenRecipe = searchedRecipe.recipe
@@ -68,6 +75,15 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
             self.experiencesButton.setTitle("Experiences (\(self.experienceCount))", for: .normal)
             
             self.ingredientsTableView.reloadData()
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                self.isFavoriteButton.alpha = 1
+                self.recipeImage.alpha = 1
+                self.recipeName.alpha = 1
+                self.ingredientsTableView.alpha = 1
+                self.instructionsButton.alpha = 1
+                self.experiencesButton.alpha = 1
+            })
         }
     }
     

@@ -10,8 +10,11 @@ import UIKit
 
 class ExperienceTableViewCell: UITableViewCell {
 
+    //@IBOutlet weak var experienceBlock: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var experienceText: UILabel!
+    @IBOutlet weak var backgroundBlock: UIView!
+    @IBOutlet weak var shadowLayer: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -92,8 +92,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResults" {
-            let resultsTableViewController = segue.destination as! ResultsTableViewController
-            resultsTableViewController.query = ingredients.joined(separator: ",")
+            let resultsViewController = segue.destination as! ResultsViewController
+            resultsViewController.query = ingredients.joined(separator: ",")
         }
     }
     

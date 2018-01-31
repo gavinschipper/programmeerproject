@@ -17,8 +17,10 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
     var experiences = [experience]()
 
     @IBOutlet weak var recipeNameLabel: UILabel!
-    @IBOutlet weak var shareExperienceButton: UIButton!
     @IBOutlet weak var experiencesTableView: UITableView!
+    @IBOutlet weak var writeExperienceButton: UIBarButtonItem!
+    @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var shadowLayerPhoto: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +28,22 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
         experiencesTableView.delegate = self
         experiencesTableView.dataSource = self
         
+        experiencesTableView.estimatedRowHeight = 150
+        experiencesTableView.rowHeight = UITableViewAutomaticDimension
+        
+        experiencesTableView.alpha = 0
+        
         recipeNameLabel.text = chosenRecipe.title
+        recipeImage.downloadedFrom(link: chosenRecipe.imageURL.replacingOccurrences(of: "http://", with: "https://"), contentMode: .scaleAspectFill)
+        
+        shadowLayerPhoto.layer.masksToBounds = false
+        shadowLayerPhoto.layer.shadowOffset = CGSize(width: 0, height: 2)
+        shadowLayerPhoto.layer.shadowColor = UIColor.black.cgColor
+        shadowLayerPhoto.layer.shadowOpacity = 0.3
+        shadowLayerPhoto.layer.shadowRadius = 4
         
         if Auth.auth().currentUser == nil {
-            shareExperienceButton.isHidden = true
+            writeExperienceButton.isEnabled = false
         }
     }
     
@@ -50,6 +64,11 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
                     self.experiences.append(experienceToBeAdded)
                 }
                 self.experiencesTableView.reloadData()
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.experiencesTableView.alpha = 1
+                    return
+                })
             }
         })
     }
@@ -62,15 +81,26 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
         return experiences.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell") as! ExperienceTableViewCell
         
         cell.usernameLabel.text = experiences[indexPath.row].username
         cell.experienceText.text = experiences[indexPath.row].experienceText
+        
+        cell.backgroundBlock.layer.cornerRadius = 10
+        cell.backgroundBlock.layer.masksToBounds = true
+        
+        cell.shadowLayer.layer.cornerRadius = 10
+        cell.shadowLayer.layer.masksToBounds = true
+        
+        cell.backgroundBlock.layer.borderWidth = 3
+        cell.backgroundBlock.layer.borderColor = UIColor.white.cgColor
+        
+        cell.shadowLayer.layer.masksToBounds = false
+        cell.shadowLayer.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.shadowLayer.layer.shadowColor = UIColor.black.cgColor
+        cell.shadowLayer.layer.shadowOpacity = 0.3
+        cell.shadowLayer.layer.shadowRadius = 4
         
         return cell
     }

@@ -11,6 +11,7 @@
 		DC023CD8201663AB000C119C /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC023CD7201663AB000C119C /* InstructionsViewController.swift */; };
 		DC1EC7D520160478002C67F4 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1EC7D420160478002C67F4 /* IngredientsTableViewCell.swift */; };
 		DC445A8A201A2B9200DE6FBA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC445A89201A2B9200DE6FBA /* FavoritesViewController.swift */; };
+		DC50640320213ACF001A6338 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC50640220213ACF001A6338 /* ResultsViewController.swift */; };
 		DC8EB76E2018C11000B64720 /* WriteExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB76D2018C11000B64720 /* WriteExperienceViewController.swift */; };
 		DC8EB7702018CAA300B64720 /* ExperiencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB76F2018CAA300B64720 /* ExperiencesViewController.swift */; };
 		DC8EB77220192D3800B64720 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB77120192D3800B64720 /* ExperienceTableViewCell.swift */; };
@@ -22,7 +23,6 @@
 		DCA4325C200F635F00C9E517 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4325B200F635F00C9E517 /* Recipe.swift */; };
 		DCA4325E200F65DD00C9E517 /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4325D200F65DD00C9E517 /* ResultsController.swift */; };
 		DCA4326420112A9600C9E517 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4326320112A9600C9E517 /* CreateAccountViewController.swift */; };
-		DCA43266201142AC00C9E517 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43265201142AC00C9E517 /* ResultsTableViewController.swift */; };
 		DCA43268201146F700C9E517 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43267201146F700C9E517 /* RecipeTableViewCell.swift */; };
 		DCF41DB0201225A200286031 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41DAF201225A200286031 /* SearchTableViewCell.swift */; };
 		DCF41DB220123F5D00286031 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41DB120123F5D00286031 /* RecipeDetailViewController.swift */; };
@@ -39,6 +39,7 @@
 		DC023CD7201663AB000C119C /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		DC1EC7D420160478002C67F4 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		DC445A89201A2B9200DE6FBA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		DC50640220213ACF001A6338 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		DC8EB76D2018C11000B64720 /* WriteExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteExperienceViewController.swift; sourceTree = "<group>"; };
 		DC8EB76F2018CAA300B64720 /* ExperiencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewController.swift; sourceTree = "<group>"; };
 		DC8EB77120192D3800B64720 /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		DCA4325B200F635F00C9E517 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		DCA4325D200F65DD00C9E517 /* ResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsController.swift; sourceTree = "<group>"; };
 		DCA4326320112A9600C9E517 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		DCA43265201142AC00C9E517 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		DCA43267201146F700C9E517 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		DCF41DAF201225A200286031 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		DCF41DB120123F5D00286031 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				DCA43232200E0E4900C9E517 /* AccountViewController.swift */,
 				DCA4326320112A9600C9E517 /* CreateAccountViewController.swift */,
 				DCA4325D200F65DD00C9E517 /* ResultsController.swift */,
-				DCA43265201142AC00C9E517 /* ResultsTableViewController.swift */,
+				DC50640220213ACF001A6338 /* ResultsViewController.swift */,
 				DCF41DB120123F5D00286031 /* RecipeDetailViewController.swift */,
 				DC023CD7201663AB000C119C /* InstructionsViewController.swift */,
 				DC445A89201A2B9200DE6FBA /* FavoritesViewController.swift */,
@@ -301,6 +301,7 @@
 			files = (
 				DC1EC7D520160478002C67F4 /* IngredientsTableViewCell.swift in Sources */,
 				DCA43233200E0E4900C9E517 /* AccountViewController.swift in Sources */,
+				DC50640320213ACF001A6338 /* ResultsViewController.swift in Sources */,
 				DCA43253200E49DA00C9E517 /* SearchViewController.swift in Sources */,
 				DC8EB7742019318800B64720 /* Experience.swift in Sources */,
 				DCA4325C200F635F00C9E517 /* Recipe.swift in Sources */,
@@ -310,7 +311,6 @@
 				DC8EB77220192D3800B64720 /* ExperienceTableViewCell.swift in Sources */,
 				DC445A8A201A2B9200DE6FBA /* FavoritesViewController.swift in Sources */,
 				DCA43268201146F700C9E517 /* RecipeTableViewCell.swift in Sources */,
-				DCA43266201142AC00C9E517 /* ResultsTableViewController.swift in Sources */,
 				DCF41DB220123F5D00286031 /* RecipeDetailViewController.swift in Sources */,
 				DCA4325A200F5F6D00C9E517 /* SearchResult.swift in Sources */,
 				DC8EB76E2018C11000B64720 /* WriteExperienceViewController.swift in Sources */,
