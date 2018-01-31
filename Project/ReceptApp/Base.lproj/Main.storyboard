@@ -928,18 +928,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR5-2G-0c5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="WRE-qE-RmR"/>
-                                </constraints>
-                                <color key="barTintColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Big-data-Exhaustive-review-pulls-together-evidence-on-food-groups-and-diet-related-disease" translatesAutoresizingMaskIntoConstraints="NO" id="n4I-v0-eFs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not logged in! Therefore you can't see any favorite recipes." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62G-ye-MZn">
+                                <rect key="frame" x="50" y="257" width="275" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dup-ex-dRb">
                                 <rect key="frame" x="0.0" y="56" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -981,12 +978,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR5-2G-0c5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="WRE-qE-RmR"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.80000000000000004" green="0.32549019610000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="62G-ye-MZn" firstAttribute="leading" secondItem="ARz-Ak-4Yw" secondAttribute="leading" constant="50" id="5Zg-JF-8Fv"/>
+                            <constraint firstItem="n4I-v0-eFs" firstAttribute="leading" secondItem="ARz-Ak-4Yw" secondAttribute="leading" id="6v2-xl-6Vg"/>
                             <constraint firstItem="dup-ex-dRb" firstAttribute="leading" secondItem="ARz-Ak-4Yw" secondAttribute="leading" id="Dde-eJ-9fo"/>
+                            <constraint firstItem="n4I-v0-eFs" firstAttribute="top" secondItem="ARz-Ak-4Yw" secondAttribute="top" id="GWu-cj-lrO"/>
                             <constraint firstItem="dup-ex-dRb" firstAttribute="bottom" secondItem="ARz-Ak-4Yw" secondAttribute="bottom" id="Nqq-gm-nvN"/>
+                            <constraint firstItem="62G-ye-MZn" firstAttribute="centerY" secondItem="7K9-Na-XSn" secondAttribute="centerY" id="QWc-Ri-9pv"/>
+                            <constraint firstItem="n4I-v0-eFs" firstAttribute="bottom" secondItem="ARz-Ak-4Yw" secondAttribute="bottom" id="Sw6-Fk-gng"/>
+                            <constraint firstItem="n4I-v0-eFs" firstAttribute="trailing" secondItem="ARz-Ak-4Yw" secondAttribute="trailing" id="YqT-9P-km7"/>
                             <constraint firstItem="PR5-2G-0c5" firstAttribute="trailing" secondItem="ARz-Ak-4Yw" secondAttribute="trailing" id="Z68-Yv-gwd"/>
+                            <constraint firstItem="ARz-Ak-4Yw" firstAttribute="trailing" secondItem="62G-ye-MZn" secondAttribute="trailing" constant="50" id="bXq-cg-9Zz"/>
                             <constraint firstItem="dup-ex-dRb" firstAttribute="top" secondItem="PR5-2G-0c5" secondAttribute="bottom" id="f3n-tj-2gM"/>
                             <constraint firstItem="PR5-2G-0c5" firstAttribute="leading" secondItem="ARz-Ak-4Yw" secondAttribute="leading" id="qpe-3z-7Qz"/>
                             <constraint firstItem="dup-ex-dRb" firstAttribute="trailing" secondItem="ARz-Ak-4Yw" secondAttribute="trailing" id="wkv-XI-UI3"/>
@@ -998,11 +1014,12 @@
                     <connections>
                         <outlet property="favoritesSearchBar" destination="PR5-2G-0c5" id="K8m-yr-Db9"/>
                         <outlet property="favoritesTableView" destination="dup-ex-dRb" id="wrL-we-hqP"/>
+                        <outlet property="loginMessage" destination="62G-ye-MZn" id="IdL-0w-Aj3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APN-Se-hDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="-151"/>
+            <point key="canvasLocation" x="1612" y="-151.57421289355324"/>
         </scene>
     </scenes>
     <resources>

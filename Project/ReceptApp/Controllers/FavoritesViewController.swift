@@ -14,6 +14,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     var favorites = [recipe]()
     var currentFavoritesArray = [recipe]()
     
+    @IBOutlet weak var loginMessage: UILabel!
     @IBOutlet weak var favoritesSearchBar: UISearchBar!
     @IBOutlet weak var favoritesTableView: UITableView!
     
@@ -43,6 +44,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let ref: DatabaseReference! = Database.database().reference()
         if Auth.auth().currentUser != nil {
+            loginMessage.isHidden = true
             ref.child("users").child(userID!).child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if snapshot.childrenCount > 0 {
