@@ -24,3 +24,9 @@ Favorieten worden nu correct ingeladen en getoond. Experiences-pagina werkt ook.
 
 # 25-1-2018
 Experiences-button wordt correct geupdate met juiste aantal experiences bij een recept. Search bar bij de favorieten lijst toegevoegd en werkt correct. Bij het schrijven van een experience wordt gecheckt of gebruiker daadwerkelijk iets geschreven heeft, anders kan het niet opgeslagen worden. Alle functies werken correct, echter worden sommige schermen nog langzaam ingeladen. Kijken hoe dit verbeterd kan worden. Verder moet er nog veel gedaan worden aan de layout. Nog niet tevreden hiermee. 
+
+# 26-1-2018 t/m 29-1-2018
+Wegens overlijden van familielid niks aan project gedaan.
+
+# 30-1-2018
+Gewerkt aan het soepeler laten werken van de app door het gebruik van fades. Verder gewerkt aan het design van de app om hem mooier en meer gebruiksvriendelijk te maken. 
