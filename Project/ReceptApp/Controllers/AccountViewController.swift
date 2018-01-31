@@ -27,6 +27,8 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.setHidesBackButton(true, animated: true)
+        
         if Auth.auth().currentUser != nil {
             statusLabel.isHidden = true
             emailTextField.isHidden = true
@@ -90,8 +92,8 @@ class AccountViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "startScherm")
-                present(vc, animated: true, completion: nil)
+                let accountViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! AccountViewController
+                self.navigationController?.pushViewController(accountViewController, animated: true)
                 
             } catch let error as NSError {
                 print(error.localizedDescription)
