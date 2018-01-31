@@ -31,20 +31,7 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
         experiencesTableView.estimatedRowHeight = 150
         experiencesTableView.rowHeight = UITableViewAutomaticDimension
         
-        experiencesTableView.alpha = 0
-        
-        recipeNameLabel.text = chosenRecipe.title
-        recipeImage.downloadedFromLink(link: chosenRecipe.imageURL.replacingOccurrences(of: "http://", with: "https://"), contentMode: .scaleAspectFill)
-        
-        shadowLayerPhoto.layer.masksToBounds = false
-        shadowLayerPhoto.layer.shadowOffset = CGSize(width: 0, height: 2)
-        shadowLayerPhoto.layer.shadowColor = UIColor.black.cgColor
-        shadowLayerPhoto.layer.shadowOpacity = 0.3
-        shadowLayerPhoto.layer.shadowRadius = 4
-        
-        if Auth.auth().currentUser == nil {
-            writeExperienceButton.isEnabled = false
-        }
+        updateUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,6 +62,23 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func updateUI() {
+        experiencesTableView.alpha = 0
+        
+        recipeNameLabel.text = chosenRecipe.title
+        recipeImage.downloadedFromLink(link: chosenRecipe.imageURL.replacingOccurrences(of: "http://", with: "https://"), contentMode: .scaleAspectFill)
+        
+        shadowLayerPhoto.layer.masksToBounds = false
+        shadowLayerPhoto.layer.shadowOffset = CGSize(width: 0, height: 2)
+        shadowLayerPhoto.layer.shadowColor = UIColor.black.cgColor
+        shadowLayerPhoto.layer.shadowOpacity = 0.3
+        shadowLayerPhoto.layer.shadowRadius = 4
+        
+        if Auth.auth().currentUser == nil {
+            writeExperienceButton.isEnabled = false
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
