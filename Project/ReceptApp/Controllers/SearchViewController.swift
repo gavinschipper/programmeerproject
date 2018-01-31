@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SearchCellDelegate {
-    // properties
+    // MARK: properties
     var results = [searchResult]()
     var ingredients: [String] = []
     var item = ""
@@ -23,6 +23,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ingredientTextField.resignFirstResponder()
     }
     
+    /// fuwehog wheogh
     override func viewDidLoad() {
         super.viewDidLoad()
         

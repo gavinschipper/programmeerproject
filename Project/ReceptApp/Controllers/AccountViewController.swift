@@ -34,19 +34,7 @@ class AccountViewController: UIViewController {
             loginButton.isHidden = true
             createAccountButton.isHidden = true
             
-            let userID = Auth.auth().currentUser?.uid
-            
-            let ref: DatabaseReference! = Database.database().reference()
-            
-            ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-                // Get user value
-                let value = snapshot.value as? NSDictionary
-                let username = value?["username"] as? String ?? ""
-                self.usernameLabel.text = username
-
-            }) { (error) in
-                print(error.localizedDescription)
-            }
+            loadUsername()
             
         } else {
             loggedInStackView.isHidden = true
@@ -108,6 +96,22 @@ class AccountViewController: UIViewController {
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func loadUsername() {
+        let userID = Auth.auth().currentUser?.uid
+        
+        let ref: DatabaseReference! = Database.database().reference()
+        
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let username = value?["username"] as? String ?? ""
+            self.usernameLabel.text = username
+            
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
     
