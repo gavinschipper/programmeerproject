@@ -14,7 +14,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     var favorites = [recipe]()
     var currentFavoritesArray = [recipe]()
     
-    @IBOutlet weak var loginMessage: UILabel!
     @IBOutlet weak var favoritesSearchBar: UISearchBar!
     @IBOutlet weak var favoritesTableView: UITableView!
     

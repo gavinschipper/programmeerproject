@@ -34,7 +34,7 @@ class ExperiencesViewController: UIViewController, UITableViewDelegate, UITableV
         experiencesTableView.alpha = 0
         
         recipeNameLabel.text = chosenRecipe.title
-        recipeImage.downloadedFrom(link: chosenRecipe.imageURL.replacingOccurrences(of: "http://", with: "https://"), contentMode: .scaleAspectFill)
+        recipeImage.downloadedFromLink(link: chosenRecipe.imageURL.replacingOccurrences(of: "http://", with: "https://"), contentMode: .scaleAspectFill)
         
         shadowLayerPhoto.layer.masksToBounds = false
         shadowLayerPhoto.layer.shadowOffset = CGSize(width: 0, height: 2)

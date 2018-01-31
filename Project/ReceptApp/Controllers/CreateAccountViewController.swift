@@ -46,7 +46,6 @@ class CreateAccountViewController: UIViewController {
                 if error == nil {
                     
                     guard let uid = user?.uid else {
-                        print("uid kon niet opgehaald worden")
                         return
                     }
                     

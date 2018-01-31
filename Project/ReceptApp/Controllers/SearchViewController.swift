@@ -9,14 +9,16 @@
 import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SearchCellDelegate {
-    
+    // properties
     var results = [searchResult]()
     var ingredients: [String] = []
     var item = ""
     
+    // outlets
     @IBOutlet weak var ingredientTextField: UITextField!
     @IBOutlet weak var ingredientsTableView: UITableView!
     
+    // actions
     @IBAction func returnPressed(_ sender: Any) {
         ingredientTextField.resignFirstResponder()
     }
@@ -75,6 +77,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    // delete ingredient
     func didTapButton(_ sender: UIButton) {
         if let indexPath = getCurrentCellIndexPath(sender) {
             ingredients.remove(at: indexPath.row)
