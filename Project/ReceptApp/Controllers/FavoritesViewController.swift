@@ -32,19 +32,18 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         favoritesSearchBar.text = ""
-        setupTableView()
+        updateUI()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func setupTableView() {
+    func updateUI() {
         let userID = Auth.auth().currentUser?.uid
         
         let ref: DatabaseReference! = Database.database().reference()
         if Auth.auth().currentUser != nil {
-            loginMessage.isHidden = true
             ref.child("users").child(userID!).child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if snapshot.childrenCount > 0 {
@@ -70,6 +69,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                     })
                 }
             })
+        } else {
+            loginWarning()
         }
     }
     
@@ -77,6 +78,22 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         favoritesSearchBar.delegate = self
     }
     
+    func loginWarning() {
+        
+        // create the alert
+        let alert = UIAlertController(title: "No favorites", message: "You are not logged in. Therefore you can't see any favorites.", preferredStyle: UIAlertControllerStyle.alert)
+    
+        // add actions
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { action in
+            let accountViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! AccountViewController
+            self.navigationController?.pushViewController(accountViewController, animated: true)
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
     
     // Table setup
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

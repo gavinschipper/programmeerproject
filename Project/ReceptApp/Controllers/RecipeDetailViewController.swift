@@ -23,6 +23,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var ingredientsTableView: UITableView!
     @IBOutlet weak var instructionsButton: UIButton!
     @IBOutlet weak var experiencesButton: UIButton!
+    @IBOutlet weak var shadowLayer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,13 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         ingredientsTableView.alpha = 0
         instructionsButton.alpha = 0
         experiencesButton.alpha = 0
+        shadowLayer.alpha = 0
+        
+        shadowLayer.layer.masksToBounds = false
+        shadowLayer.layer.shadowOffset = CGSize(width: 0, height: 2)
+        shadowLayer.layer.shadowColor = UIColor.black.cgColor
+        shadowLayer.layer.shadowOpacity = 0.3
+        shadowLayer.layer.shadowRadius = 4
         
         ResultsController.shared.fetchRecipeResult(query: recipeID) { (searchedRecipe) in
             if let searchedRecipe = searchedRecipe {
@@ -80,6 +88,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
                 self.isFavoriteButton.alpha = 1
                 self.recipeImage.alpha = 1
                 self.recipeName.alpha = 1
+                self.shadowLayer.alpha = 1
                 self.ingredientsTableView.alpha = 1
                 self.instructionsButton.alpha = 1
                 self.experiencesButton.alpha = 1
