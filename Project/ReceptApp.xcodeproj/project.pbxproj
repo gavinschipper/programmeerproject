@@ -16,7 +16,6 @@
 		DC8EB7702018CAA300B64720 /* ExperiencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB76F2018CAA300B64720 /* ExperiencesViewController.swift */; };
 		DC8EB77220192D3800B64720 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB77120192D3800B64720 /* ExperienceTableViewCell.swift */; };
 		DC8EB7742019318800B64720 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB7732019318800B64720 /* Experience.swift */; };
-		DCA43231200E08CA00C9E517 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCA43230200E08CA00C9E517 /* GoogleService-Info.plist */; };
 		DCA43233200E0E4900C9E517 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43232200E0E4900C9E517 /* AccountViewController.swift */; };
 		DCA43253200E49DA00C9E517 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43252200E49DA00C9E517 /* SearchViewController.swift */; };
 		DCA4325A200F5F6D00C9E517 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43259200F5F6D00C9E517 /* SearchResult.swift */; };
@@ -24,6 +23,7 @@
 		DCA4325E200F65DD00C9E517 /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4325D200F65DD00C9E517 /* ResultsController.swift */; };
 		DCA4326420112A9600C9E517 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4326320112A9600C9E517 /* CreateAccountViewController.swift */; };
 		DCA43268201146F700C9E517 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA43267201146F700C9E517 /* RecipeTableViewCell.swift */; };
+		DCDA08302021B8B800F96386 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCDA082F2021B8B800F96386 /* GoogleService-Info.plist */; };
 		DCF41DB0201225A200286031 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41DAF201225A200286031 /* SearchTableViewCell.swift */; };
 		DCF41DB220123F5D00286031 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF41DB120123F5D00286031 /* RecipeDetailViewController.swift */; };
 		DCFD733D2007EEC90032BF6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD733C2007EEC90032BF6B /* AppDelegate.swift */; };
@@ -44,7 +44,6 @@
 		DC8EB76F2018CAA300B64720 /* ExperiencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewController.swift; sourceTree = "<group>"; };
 		DC8EB77120192D3800B64720 /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		DC8EB7732019318800B64720 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
-		DCA43230200E08CA00C9E517 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DCA43232200E0E4900C9E517 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DCA43252200E49DA00C9E517 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DCA43259200F5F6D00C9E517 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		DCA4325D200F65DD00C9E517 /* ResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsController.swift; sourceTree = "<group>"; };
 		DCA4326320112A9600C9E517 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		DCA43267201146F700C9E517 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		DCDA082F2021B8B800F96386 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../ReceptApp/ReceptApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DCF41DAF201225A200286031 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		DCF41DB120123F5D00286031 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		DCFD73392007EEC90032BF6B /* ReceptApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceptApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +149,7 @@
 				DCFD73432007EEC90032BF6B /* Assets.xcassets */,
 				DCFD73452007EEC90032BF6B /* LaunchScreen.storyboard */,
 				DCFD73482007EEC90032BF6B /* Info.plist */,
-				DCA43230200E08CA00C9E517 /* GoogleService-Info.plist */,
+				DCDA082F2021B8B800F96386 /* GoogleService-Info.plist */,
 			);
 			path = ReceptApp;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCFD73472007EEC90032BF6B /* LaunchScreen.storyboard in Resources */,
-				DCA43231200E08CA00C9E517 /* GoogleService-Info.plist in Resources */,
+				DCDA08302021B8B800F96386 /* GoogleService-Info.plist in Resources */,
 				DCFD73442007EEC90032BF6B /* Assets.xcassets in Resources */,
 				DCFD73422007EEC90032BF6B /* Main.storyboard in Resources */,
 			);

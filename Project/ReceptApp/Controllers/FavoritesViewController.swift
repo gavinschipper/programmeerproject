@@ -22,6 +22,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
         
+        favoritesTableView.alpha = 0
+        
         super.viewDidLoad()
         favoritesTableView.tableFooterView = UIView(frame: CGRect.zero)
         setupSearchBar()
@@ -59,6 +61,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                     }
                     self.currentFavoritesArray = self.favorites
                     self.favoritesTableView.reloadData()
+                    
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.favoritesTableView.alpha = 1
+                        return
+                    })
                 }
             })
         }
