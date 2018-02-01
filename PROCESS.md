@@ -33,3 +33,6 @@ Gewerkt aan het soepeler laten werken van de app door het gebruik van fades. Ver
 
 # 31-1-2018
 Laatste design verbeteringen gedaan. Code opgeschoond en aan de hand van BetterCodeHub code verbeterd (bijv. stukken code minder lang gemaakt). Code beter gestructureerd. Begonnen met het schrijven van comments en beschrijven. Product demo opgenomen en geüpload.
+
+# 1-2-2018
+In alle files comments geplaatst en headers geschreven. Final code gecommit. README.me geupdate. LICENSE aangemaakt. Final report geschreven. 
