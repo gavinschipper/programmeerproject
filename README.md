@@ -8,6 +8,12 @@ Wanneer je kookt, gebruik je niet altijd alle producten (helemaal) die je in hui
 <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/1.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/2.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/3.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/4.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/5.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/6.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/7.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/8.png width="300">
 
 ## Acknowledgement
+Ik wil de volgende bronnen graag bedanken voor het gebruik van hun services/materiaal:
+* [Food2Fork.com](https://food2fork.com) voor het gebruik van de API 
+* https://makeappicon.com voor het maken van een app icoon met hun tool
+* [Flaticon](https://www.flaticon.com) voor verschillende in-app icons
+* http://weknowyourdreams.com voor een sample image bij alle imageviews
+* [Google Afbeeldingen](https://images.google.com) voor overige afbeeldingen die ik gebruikt heb in de app
 
 ## Product demo
 https://youtu.be/RScFgooQuyQ
