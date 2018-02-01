@@ -19,7 +19,7 @@ Ik wil de volgende bronnen graag bedanken voor het gebruik van hun services/mate
 https://youtu.be/RScFgooQuyQ
 
 ## License
-[Click here](LICENSE)
+[Click here](LICENSE.md)
 
 ## Better Code Hub
 [![BCH compliance](https://bettercodehub.com/edge/badge/gavinschipper/programmeerproject?branch=master)](https://bettercodehub.com/)
