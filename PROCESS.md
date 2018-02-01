@@ -30,3 +30,6 @@ Wegens overlijden van familielid niks aan project gedaan.
 
 # 30-1-2018
 Gewerkt aan het soepeler laten werken van de app door het gebruik van fades. Verder gewerkt aan het design van de app om hem mooier en meer gebruiksvriendelijk te maken. 
+
+# 31-1-2018
+Laatste design verbeteringen gedaan. Code opgeschoond en aan de hand van BetterCodeHub code verbeterd (bijv. stukken code minder lang gemaakt). Code beter gestructureerd. Begonnen met het schrijven van comments en beschrijven. Product demo opgenomen en geüpload.
