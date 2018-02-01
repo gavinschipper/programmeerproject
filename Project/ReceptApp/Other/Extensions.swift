@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// An extension for UIImageView found on stackoverflow which can be used to download images from a URL and set the imageview to the right image
 /// https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
@@ -32,6 +33,7 @@ extension UIImageView {
     }
 }
 
+/// An extension written for UIViewController with a function that can create and show an alert. The function can be called in every ViewController.
 extension UIViewController {
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

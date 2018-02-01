@@ -2,7 +2,7 @@
 //  ExperienceTableViewCell.swift
 //  ReceptApp
 //
-//  
+//  The table view cell class that belongs to the ExperienceViewController
 //
 //  Created by Gavin Schipper on 24-01-18.
 //  Copyright © 2018 Gavin Schipper. All rights reserved.
