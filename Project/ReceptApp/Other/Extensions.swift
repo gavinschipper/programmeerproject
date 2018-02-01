@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode

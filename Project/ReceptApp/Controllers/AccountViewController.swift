@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  ReceptApp
 //
-//  
+//  The AccountViewController is the view where the user can either login, or when the user is already logged in, can log out and see which username he/she is logged in with. The outlets for both cases are in the view, but the right outlets are shown to the right user.
 //
 //  Created by Gavin Schipper on 16-01-18.
 //  Copyright © 2018 Gavin Schipper. All rights reserved.
@@ -106,11 +106,6 @@ class AccountViewController: UIViewController {
     /// Closes the keyboard when the screen is pressed anywhere but the keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

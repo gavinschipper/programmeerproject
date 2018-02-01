@@ -94,7 +94,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return nil
     }
     
-    /// prepare function for sending the query with the chosen ingredients to the resultsViewController
+    /// prepare function for sending the query with the chosen ingredients to the resultsViewController. The ingredients are joined to one string seperated by commas.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResults" {
             let resultsViewController = segue.destination as! ResultsViewController
@@ -105,10 +105,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /// Closes the keyboard when the screen is pressed anywhere but the keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
 }

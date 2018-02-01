@@ -2,6 +2,8 @@
 //  RecipeDetailViewController.swift
 //  ReceptApp
 //
+//  The RecipeDetailViewController shows the details of the recipe chosen in the resultsView. It shows the image of the recipe, the title of the recipe, the ingredients that have to be used for making the recipe and shows buttons that redirect to the instructions of the recipe or the experiences that were written about the recipe.
+//
 //  Created by Gavin Schipper on 19-01-18.
 //  Copyright © 2018 Gavin Schipper. All rights reserved.
 //
@@ -11,12 +13,15 @@ import Firebase
 
 class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let ref: DatabaseReference! = Database.database().reference()
+    // MARK: Properties
     
+    let ref: DatabaseReference! = Database.database().reference()
     var chosenRecipe: recipe!
     var recipeID = ""
     var experienceCount: Int = 0
 
+    // MARK: Outlets
+    
     @IBOutlet weak var isFavoriteButton: UIButton!
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
@@ -25,6 +30,26 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var experiencesButton: UIButton!
     @IBOutlet weak var shadowLayer: UIView!
     
+    // MARK: Actions
+    
+    /// Changes the state of the favorite button and add the recipe to or removes it from the user's favorites.
+    @IBAction func isFavoriteButtonPressed(_ sender: Any) {
+        isFavoriteButton.isSelected = !isFavoriteButton.isSelected
+        
+        let userID = Auth.auth().currentUser?.uid
+        let userReference = self.ref.child("users").child(userID!).child("favorites")
+        
+        if isFavoriteButton.isSelected == true {
+            userReference.child(recipeID).setValue(["id":recipeID, "title":chosenRecipe.title, "image":chosenRecipe.imageURL, "source":chosenRecipe.sourceURL, "ingredients":chosenRecipe.ingredients])
+            
+        } else if isFavoriteButton.isSelected != true {
+            userReference.child(recipeID).removeValue()
+        }
+    }
+    
+    // MARK: Functions
+    
+    /// Initializes the tableview, runs several functions to setup the UI and retrieves the recipe data from the API
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,26 +66,15 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
                 self.updateUI(with: self.chosenRecipe)
             }
         }
+        
         switchFavorite()
     }
     
-    @IBAction func isFavoriteButtonPressed(_ sender: Any) {
-        isFavoriteButton.isSelected = !isFavoriteButton.isSelected
-        
-        let userID = Auth.auth().currentUser?.uid
-        let userReference = self.ref.child("users").child(userID!).child("favorites")
-        
-        if isFavoriteButton.isSelected == true {
-            userReference.child(recipeID).setValue(["id":recipeID, "title":chosenRecipe.title, "image":chosenRecipe.imageURL, "source":chosenRecipe.sourceURL, "ingredients":chosenRecipe.ingredients])
-            
-        } else if isFavoriteButton.isSelected != true {
-            userReference.child(recipeID).removeValue()
-        }
-    }
-    
+    /// Gives all the outlets in the view the right values and shows all the outlets with a fade in when everything is loaded.
     func updateUI(with recipe: recipe) {
         DispatchQueue.main.async {
             let urlString = recipe.imageURL
+            // Xcode 9 does not like 'http'. Therefore every occurrence of 'http' has to be changed into 'https'
             let newUrlString = urlString.replacingOccurrences(of: "http://", with: "https://")
             let url = URL(string: newUrlString)
             self.recipeImage.downloadedFrom(url: url!, contentMode: .scaleAspectFill)
@@ -75,6 +89,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    /// Checks if a user is logged in and hides the button otherwise. Checks if the recipe is already in user's favorites and sets the button to the right state.
     func switchFavorite() {
         if Auth.auth().currentUser == nil {
             isFavoriteButton.isHidden = true
@@ -92,6 +107,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    /// Retrieves from the database how many experiences are written about the recipe.
     func getExperienceCount() {
         ref.child("experiences").child(recipeID).observeSingleEvent(of: .value, with: { (snapshot) in
             self.experienceCount = Int(snapshot.childrenCount)
@@ -116,6 +132,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    /// makes every outlet invisible when the view opens, and fades in every outlet when everything is loaded.
     func operateAlpha(operation: String) {
         if operation == "set" {
             isFavoriteButton.alpha = 0
@@ -139,6 +156,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    /// Sets the shadows of the layer behind the imageview.
     func setShadow() {
         shadowLayer.layer.masksToBounds = false
         shadowLayer.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -146,11 +164,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate, UITable
         shadowLayer.layer.shadowOpacity = 0.3
         shadowLayer.layer.shadowRadius = 4
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
+    /// Sends the recipeURL to the instructionsView when the instructions button is pressed and sends the whole recipe to the experiencesView when the experiences button is pressed.
     override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
         if segue.identifier == "showInstructions" {
             let InstructionsViewController = segue.destination as! InstructionsViewController

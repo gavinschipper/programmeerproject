@@ -7,9 +7,6 @@
 //
 
 import Foundation
-import Firebase
-
-let ref: DatabaseReference! = Database.database().reference()
 
 struct experience: Codable {
     var experienceText: String

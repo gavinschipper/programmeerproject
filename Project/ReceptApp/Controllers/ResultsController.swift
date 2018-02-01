@@ -2,6 +2,8 @@
 //  ResultsController.swift
 //  ReceptApp
 //
+//  The ResultsController contains the functions that can be used to retrieve data from the API. They are shared functions so they can be called in every file.
+//
 //  Created by Gavin Schipper on 17-01-18.
 //  Copyright © 2018 Gavin Schipper. All rights reserved.
 //
@@ -12,7 +14,7 @@ class ResultsController {
     
     static let shared = ResultsController()
     
-    // Verzamelt de zoekresultaten van de API
+    /// Searches for recipes using a query containing the ingredients that were given in the searchViewController
     func fetchSearchResults(query: String, completion: @escaping (searchResults?) -> Void) {
         let url = URL(string: "https://food2fork.com/api/search?key=0bef0e09d13316b22b89a8b44b7e0666&q=\(query)")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -27,7 +29,7 @@ class ResultsController {
         task.resume()
     }
     
-    // Haalt een specifiek recept op van de API
+    /// Retrieves a specific recipe from the API using the recipeID
     func fetchRecipeResult(query: String, completion: @escaping (searchedRecipe?) -> Void) {
         let url = URL(string: "https://food2fork.com/api/get?key=0bef0e09d13316b22b89a8b44b7e0666&rId=\(query)")!
         let task = URLSession.shared.dataTask(with: url) { (data,
@@ -42,6 +44,5 @@ class ResultsController {
         }
         task.resume()
     }
-
 }
 

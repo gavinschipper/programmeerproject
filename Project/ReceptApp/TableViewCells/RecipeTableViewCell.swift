@@ -2,6 +2,8 @@
 //  CustomTableViewCell.swift
 //  ReceptApp
 //
+//  The tableview cell class that belongs to the tableviews in the ResultsViewController and the FavoritesViewController
+//
 //  Created by Gavin Schipper on 18-01-18.
 //  Copyright © 2018 Gavin Schipper. All rights reserved.
 //

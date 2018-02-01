@@ -2,6 +2,8 @@
 //  FavoritesViewController.swift
 //  ReceptApp
 //
+//  The FavoritesViewController shows all the favorites of a user in a tableview. The view contains a searchbar which makes it possible to search for a specific recipe in the favorites list. If the user is not logged in, a popup shows which tells the user he/she is not logged in. There is a button that redirects the user to the login page.
+//
 //  Created by Gavin Schipper on 25-01-18.
 //  Copyright © 2018 Gavin Schipper. All rights reserved.
 //
@@ -11,41 +13,48 @@ import Firebase
 
 class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    // MARK: Properties
     var favorites = [recipe]()
     var currentFavoritesArray = [recipe]()
     
+    // MARK: Outlets
     @IBOutlet weak var favoritesSearchBar: UISearchBar!
     @IBOutlet weak var favoritesTableView: UITableView!
     
+    // MARK: Functions
+    
+    /// Initializes the tableview and the search bar is set up.
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
         
-        favoritesTableView.alpha = 0
-        
-        super.viewDidLoad()
-        favoritesTableView.tableFooterView = UIView(frame: CGRect.zero)
         setupSearchBar()
     }
     
+    /// Makes sure the search bar does not contain text and the tableview is invisible when the view shows
     override func viewWillAppear(_ animated: Bool) {
         favoritesSearchBar.text = ""
         favoritesTableView.alpha = 0
     }
     
+    // Updates the UI every time the view shows
     override func viewDidAppear(_ animated: Bool) {
         updateUI()
     }
     
+    // Makes sure the keyboard closes when another view comes up
     override func viewWillDisappear(_ animated: Bool) {
         favoritesSearchBar.endEditing(true)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    /// Initializes the search bar
+    func setupSearchBar() {
+        favoritesSearchBar.delegate = self
     }
     
+    /// Retrieves the favorites of a user and puts them in the tableview if the user is logged in. If this is all done the tableview fades in. If the user is not logged in a alert is shown.
     func updateUI() {
         let userID = Auth.auth().currentUser?.uid
         
@@ -55,18 +64,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 if snapshot.childrenCount > 0 {
                     self.favorites = []
-                    for favorite in snapshot.children.allObjects as! [DataSnapshot] {
-                        let favoriteObject = favorite.value as? [String: AnyObject]
-                        let id = favoriteObject?["id"]
-                        let title = favoriteObject?["title"]
-                        let image = favoriteObject?["image"]
-                        let source = favoriteObject?["source"]
-                        let ingredients = favoriteObject?["ingredients"]
-                        
-                        let favoriteToBeAdded = recipe(ingredients: ingredients as! [String], sourceURL: source as! String, recipeID: id as! String, imageURL: image as! String, title: title as! String)
-                        
-                        self.favorites.append(favoriteToBeAdded)
-                    }
+                    self.getFavorites(snapshot: snapshot)
                     self.currentFavoritesArray = self.favorites
                     self.favoritesTableView.reloadData()
                     
@@ -82,28 +80,41 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func setupSearchBar() {
-        favoritesSearchBar.delegate = self
+    ///
+    func getFavorites(snapshot: DataSnapshot) {
+        for favorite in snapshot.children.allObjects as! [DataSnapshot] {
+            let favoriteObject = favorite.value as? [String: AnyObject]
+            let id = favoriteObject?["id"]
+            let title = favoriteObject?["title"]
+            let image = favoriteObject?["image"]
+            let source = favoriteObject?["source"]
+            let ingredients = favoriteObject?["ingredients"]
+
+            let favoriteToBeAdded = recipe(ingredients: ingredients as! [String], sourceURL: source as! String, recipeID: id as! String, imageURL: image as! String, title: title as! String)
+
+            self.favorites.append(favoriteToBeAdded)
+        }
     }
     
+    /// shows an alert if the user is not logged in
     func loginWarning() {
         
-        // create the alert
         let alert = UIAlertController(title: "No favorites", message: "You are not logged in. Therefore you can't see any favorites.", preferredStyle: UIAlertControllerStyle.alert)
-    
-        // add actions
+        
+        // If the user does not want to login
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
+        // If the user wants to login
         alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { action in
             let accountViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! AccountViewController
             self.navigationController?.pushViewController(accountViewController, animated: true)
         }))
         
-        // show the alert
         self.present(alert, animated: true, completion: nil)
     }
     
-    // Table setup
+    // Tableview setup
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentFavoritesArray.count
     }
@@ -140,6 +151,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         favoritesTableView.reloadData()
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.favoritesSearchBar.endEditing(true)
+    }
+    
+    /// Sends the recipeID to the RecipeDetailViewController if a recipe is tapped
     override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
         if segue.identifier == "showRecipeDetails" {
             let RecipeDetailViewController = segue.destination as! RecipeDetailViewController
@@ -148,12 +164,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.favoritesSearchBar.endEditing(true)
-    }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.favoritesSearchBar.endEditing(true)
-//    }
+
     
 }
