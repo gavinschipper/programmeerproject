@@ -5,14 +5,7 @@
 Wanneer je kookt, gebruik je niet altijd alle producten (helemaal) die je in huis gehaald hebt, of soms komt er iets tussen waardoor je de gekochte producten helemaal niet gebruikt. Vaak hebben deze producten een houdbaarheidsdatum, dus ze zullen binnen aanzienbare tijd alsnog gebruikt moeten worden omdat ze anders bederven. Het is namelijk zonde deze (overige) producten weg te gooien. Het is echter ook niet altijd makkelijk om een gerecht te bedenken waar je deze ingrediënten alsnog voor kan gebruiken. Hier zou wat assistentie handig voor zijn. Met de app 'Homemade' kun je op basis van de ingrediënten die je nog hebt op zoek gaan naar recepten die de ingrediënten bevatten die jij graag wil op maken. De doelgroep is hierbij dus mensen die zuinig zijn/het zonde vinden om ongebruikt eten weg te gooien. 
 
 ## Screenshots
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/1.png width="300">
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/2.png width="300">
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/3.png width="300">
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/4.png width="300">
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/5.png width="300">
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/6.png width="300">
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/7.png width="300">
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/8.png width="300">
+<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/1.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/2.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/3.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/4.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/5.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/6.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/7.png width="300"> <img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/8.png width="300">
 
 ## Acknowledgement
 
