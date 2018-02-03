@@ -35,4 +35,7 @@ Gewerkt aan het soepeler laten werken van de app door het gebruik van fades. Ver
 Laatste design verbeteringen gedaan. Code opgeschoond en aan de hand van BetterCodeHub code verbeterd (bijv. stukken code minder lang gemaakt). Code beter gestructureerd. Begonnen met het schrijven van comments en beschrijven. Product demo opgenomen en geüpload.
 
 # 1-2-2018
-In alle files comments geplaatst en headers geschreven. Final code gecommit. README.me geupdate. LICENSE aangemaakt. Final report geschreven. 
+In alle files comments geplaatst en headers geschreven. Final code gecommit. README.me geupdate. LICENSE aangemaakt. Final report geschreven (niet helemaal, uitstel ivm crematie).
+
+# 3-2-2018
+Final report helemaal af. Project klaar.
