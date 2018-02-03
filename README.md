@@ -14,6 +14,7 @@ Ik wil de volgende bronnen graag bedanken voor het gebruik van hun services/mate
 * [Flaticon](https://www.flaticon.com) voor verschillende in-app icons
 * http://weknowyourdreams.com voor een sample image bij alle imageviews
 * [Google Afbeeldingen](https://images.google.com) voor overige afbeeldingen die ik gebruikt heb in de app
+* [Firebase](https://firebase.google.com/) voor het bieden van een authorization service en een database 
 
 ## Product demo
 https://youtu.be/RScFgooQuyQ
