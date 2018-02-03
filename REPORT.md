@@ -8,8 +8,8 @@ Homemade is een app waarmee je aan de hand van ingrediënten die je nog hebt rec
 ## Design
 
 ### Sketches
-De afbeelding hieronder laat een overzicht zien van de app met de verschillende controllers. Het is de schets van de eerste week. Hij klopt grotendeels, er ontbreken alleen twee controllers en sommige controllers zijn iets veranderd. Na het overzicht zal de rol van de verschillende classes besproken worden.
-<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/newFlow.png>
+De afbeelding hieronder laat een overzicht zien van de app met de verschillende controllers. De app is gemaakt op basis van een tab bar controller en is verdeeld in 3 verschillende tabs, om duidelijk onderscheid te maken tussen de verschillende onderdelen van de app en navigatie tussen deze onderdelen te vergemakkelijken. Hieronder zal rol van de verschillende classes besproken worden.
+<img src=https://github.com/gavinschipper/programmeerproject/blob/master/doc/techDesign.png>
 
 ### Classes
 #### ResultsController
